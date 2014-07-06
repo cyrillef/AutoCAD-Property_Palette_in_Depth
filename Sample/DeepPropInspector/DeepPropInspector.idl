@@ -1,0 +1,122 @@
+// (C) Copyright 2002-2003 by Autodesk, Inc. 
+
+// DeepPropInspector.idl : IDL source
+//
+// This file will be processed by the MIDL tool to
+// produce the type library (AsdkDeepPropInspector.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+//import "acadi.idl";
+
+[
+	uuid(A31FE251-1A57-437B-97B3-BE37B14C64A2),
+	version(1.0),
+	helpstring("AsdkDeepPropInspector 1.0 Type Library")
+]
+library AsdkDeepPropInspectorLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+	//----- If the following import fails then it means that the type library 
+	//----- is not on the system path you can fix the problem in two ways:
+	//----- 1. Add it to the system wide PATH environment variable
+	//----- 2. Add it to the executable file list in Developer Studio. You can do
+	//----- this in using the Tools/Option menu and then choosing the 'Directories'
+	//----- tab and finally typing the full path at the Executable files section.
+
+	//----- Importing english is ok here. Autodesk doesn't localize this idl/tlb.
+	//----- axdb16enu.tlb is guaranteed to be available in all locales.
+	//----- If you want to provide localized typelib then you must import
+	//----- localized tlb here.
+	importlib("axdb16enu.tlb");
+
+//- IAcadPieSector
+	[
+		object,
+		uuid(601F7769-86D4-42FB-962F-042329B702CA),
+		dual,
+		nonextensible,
+		helpstring("IAcadPieSector Interface"),
+		pointer_default(unique)
+	]
+	interface IAcadPieSector : IDispatch {
+		[propget, id(1), helpstring("property Exploded")] HRESULT Exploded([out, retval] VARIANT_BOOL* pVal);
+		[propput, id(1), helpstring("property Exploded")] HRESULT Exploded([in] VARIANT_BOOL newVal);
+        [propget, id(2), helpstring("property TrueColor")] HRESULT TrueColor([out, retval] IAcadAcCmColor** ppColor);
+        [propput, id(2), helpstring("property TrueColor")] HRESULT TrueColor([in] IAcadAcCmColor* pColor);
+        [propget, id(3), helpstring("property Color")] HRESULT Color([out, retval] ACAD_COLOR *pColor);
+        [propput, id(3), helpstring("property Color")] HRESULT Color([in] ACAD_COLOR cColor);
+	} ;
+
+	[
+		uuid(FABA78D8-3083-4AC8-9BB2-BCDEDB95A0E6),
+		helpstring("AcadPieSector Class")
+	]
+	coclass AcadPieSector {
+		[default] interface IAcadPieSector;
+	} ;
+
+//- IAcadPieSectors
+	[
+		object,
+		uuid(907EAF23-8D93-46A2-8AD5-73E227A86803),
+		dual,
+		nonextensible,
+		helpstring("IAcadPieSectors Interface"),
+		pointer_default(unique)
+	]
+	interface IAcadPieSectors : IDispatch {
+		[propget, id(1), helpstring("Count")] HRESULT Count([out, retval] long *pVal);
+		[propget, id(DISPID_VALUE), helpstring("Item")] HRESULT Item([in] VARIANT vIndex, [out, retval] IUnknown **ppUnk);
+		[propget, restricted, id(DISPID_NEWENUM), helpstring("Method _NewEnum")] HRESULT _NewEnum([out, retval] IUnknown ** ppUnk);
+		[id(2), helpstring("method AddSimpleSector")] HRESULT AddSimpleSector([in] DOUBLE val, [out] IAcadPieSector **ppSector);
+	} ;
+
+	[
+		uuid(B07FA972-C43A-4FE8-83F8-8B4C557B42A8),
+		helpstring("AcadPieSectors Class")
+	]
+	coclass AcadPieSectors {
+		[default] interface IAcadPieSectors;
+	} ;
+
+	[
+		uuid(106CF43F-48F2-405b-9BF0-303DFF8A004F),
+		hidden,
+		helpstring("AcadPieSectorsEnum Class")
+	]
+	coclass AcadPieSectorsEnum {
+		[default] interface IEnumVARIANT;
+	} ;
+
+//- IAcadPie
+	[
+		object,
+		uuid(A4D3EFDD-DD8A-435F-B665-63B0942F9D5E),
+		dual,
+		nonextensible,
+		helpstring("IAcadPie Interface"),
+		pointer_default(unique)
+	]
+	interface IAcadPie : IAcadCircle {
+		[propget, id(100), helpstring("property Title")] HRESULT Title([out, retval] BSTR* pVal);
+		[propput, id(100), helpstring("property Title")] HRESULT Title([in] BSTR newVal);
+		[propget, id(101), helpstring("property AllExploded")] HRESULT AllExploded([out, retval] VARIANT_BOOL* pVal);
+		[propput, id(101), helpstring("property AllExploded")] HRESULT AllExploded([in] VARIANT_BOOL newVal);
+		[propget, id(102), helpstring("property Clockwise")] HRESULT Clockwise([out, retval] VARIANT_BOOL* pVal);
+		[propput, id(102), helpstring("property Clockwise")] HRESULT Clockwise([in] VARIANT_BOOL newVal);
+		[propget, id(103), helpstring("property Sectors")] HRESULT Sectors([out, retval] IAcadPieSectors **ppVal);
+	} ;
+
+	[
+		uuid(BD5E4DAA-12BF-4D52-9E45-25C67C973720),
+		helpstring("AcadPie Class")
+	]
+	coclass AcadPie {
+		[default] interface IAcadPie ;
+		[source] interface IAcadObjectEvents ;
+		interface IAcadCircle ;
+	};
+
+};

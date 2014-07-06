@@ -1,0 +1,23 @@
+HKCR
+{
+	DeepPropInspector.AcadPieSectorsEnum.1 = s 'CAcadPieSectorsEnum Class'
+	{
+		CLSID = s '{106CF43F-48F2-405b-9BF0-303DFF8A004F}'
+	}
+	DeepPropInspector.AcadPieSectorsEnum = s 'AcadPieSectorsEnum Class'
+	{
+		CLSID = s '{106CF43F-48F2-405b-9BF0-303DFF8A004F}'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {106CF43F-48F2-405b-9BF0-303DFF8A004F} = s 'CAcadPieSectorsEnum Class'
+		{
+			ProgID = s 'DeepPropInspector.AcadPieSectorsEnum.1'
+			VersionIndependentProgID = s 'DeepPropInspector.AcadPieSectorsEnum'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'both'
+			}
+		}
+	}
+}

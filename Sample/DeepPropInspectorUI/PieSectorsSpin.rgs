@@ -1,0 +1,27 @@
+HKCR
+{
+	DeepPropInspectorUI.PieSectorsSpin.1 = s 'PieSectorsSpin Class'
+	{
+		CLSID = s '{C254C627-905A-41df-B821-FE569B1ECA73}'
+	}
+	GDeepPropInspectorUIGUi.PieSectorsSpin = s 'PieSectorsSpin Class'
+	{
+		CLSID = s '{C254C627-905A-41df-B821-FE569B1ECA73}'
+		CurVer = s 'DeepPropInspectorUI.PieSectorsSpin.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {C254C627-905A-41df-B821-FE569B1ECA73} = s 'PieSectorsSpin Class'
+		{
+			ProgID = s 'DeepPropInspectorUI.PieSectorsSpin.1'
+			VersionIndependentProgID = s 'DeepPropInspectorUI.PieSectorsSpin'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{9AAD2845-4D4B-43F6-A335-AE32633108AE}'
+		}
+	}
+}

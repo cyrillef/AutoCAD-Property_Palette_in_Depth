@@ -1,0 +1,26 @@
+HKCR
+{
+	DeepPropInspectorUI.PieSectorImage.1 = s 'PieSectorImage Class'
+	{
+		CLSID = s '{14A844BA-9FE4-47ED-9CDC-69270A77E172}'
+	}
+	DeepPropInspectorUI.PieSectorImage = s 'PieSectorImage Class'
+	{
+		CLSID = s '{14A844BA-9FE4-47ED-9CDC-69270A77E172}'
+		CurVer = s 'DeepPropInspectorUI.PieSectorImage.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {14A844BA-9FE4-47ED-9CDC-69270A77E172} = s 'PieSectorImage Class'
+		{
+			ProgID = s 'DeepPropInspectorUI.PieSectorImage.1'
+			VersionIndependentProgID = s 'DeepPropInspectorUI.PieSectorImage'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{9AAD2845-4D4B-43F6-A335-AE32633108AE}'
+		}
+	}
+}

@@ -1,0 +1,47 @@
+HKCR
+{
+	DeepPropInspector.AcadPie.1 = s 'AcadPie Class'
+	{
+		CLSID = s '{BD5E4DAA-12BF-4D52-9E45-25C67C973720}'
+	}
+	DeepPropInspector.AcadPie = s 'AcadPie Class'
+	{
+		CLSID = s '{BD5E4DAA-12BF-4D52-9E45-25C67C973720}'
+		CurVer = s 'DeepPropInspector.AcadPie.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {BD5E4DAA-12BF-4D52-9E45-25C67C973720} = s 'AcadPie Class'
+		{
+			ProgID = s 'DeepPropInspector.AcadPie.1'
+			VersionIndependentProgID = s 'DeepPropInspector.AcadPie'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{A31FE251-1A57-437B-97B3-BE37B14C64A2}'
+		}
+	}
+}
+
+HKLM
+{
+	NoRemove SOFTWARE
+	{
+		NoRemove Autodesk
+		{
+			NoRemove ObjectDBX
+			{
+				NoRemove R16.0
+				{
+					NoRemove ActiveXCLSID
+					{
+						val AsdkPie = s '{BD5E4DAA-12BF-4D52-9E45-25C67C973720}'
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,27 @@
+HKCR
+{
+	DeepPropInspector.AcadPieSectors.1 = s 'AcadPieSectors Class'
+	{
+		CLSID = s '{B07FA972-C43A-4FE8-83F8-8B4C557B42A8}'
+	}
+	DeepPropInspector.AcadPieSectors = s 'AcadPieSectors Class'
+	{
+		CLSID = s '{B07FA972-C43A-4FE8-83F8-8B4C557B42A8}'
+		CurVer = s 'DeepPropInspector.AcadPieSectors.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {B07FA972-C43A-4FE8-83F8-8B4C557B42A8} = s 'AcadPieSectors Class'
+		{
+			ProgID = s 'DeepPropInspector.AcadPieSectors.1'
+			VersionIndependentProgID = s 'DeepPropInspector.AcadPieSectors'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{A31FE251-1A57-437B-97B3-BE37B14C64A2}'
+		}
+	}
+}

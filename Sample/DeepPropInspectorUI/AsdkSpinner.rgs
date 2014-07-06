@@ -1,0 +1,34 @@
+HKCR
+{
+	DeepPropInspectorUI.AsdkSpinner.1 = s 'AsdkSpinner Class'
+	{
+		CLSID = s '{79A97213-610C-4e91-9F53-AF428492CA43}'
+	}
+	DeepPropInspectorUI.AsdkSpinner = s 'AsdkSpinner Class'
+	{
+		CLSID = s '{79A97213-610C-4e91-9F53-AF428492CA43}'
+		CurVer = s 'DeepPropInspectorUI.AsdkSpinner.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {79A97213-610C-4e91-9F53-AF428492CA43} = s 'AsdkSpinner Class'
+		{
+			ProgID = s 'DeepPropInspectorUI.AsdkSpinner.1'
+			VersionIndependentProgID = s 'DeepPropInspectorUI.AsdkSpinner'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			ForceRemove 'Control'
+			ForceRemove 'ToolboxBitmap32' = s '%MODULE%, 201'
+			'MiscStatus' = s '0'
+			{
+			    '1' = s '%OLEMISC%'
+			}
+			'TypeLib' = s '{9AAD2845-4D4B-43F6-A335-AE32633108AE}'
+			'Version' = s '1.0'
+		}
+	}
+}

@@ -1,0 +1,167 @@
+// (C) Copyright 2002-2003 by Autodesk, Inc. 
+
+// DeepPropInspectorUI.idl : IDL source
+//
+// This file will be processed by the MIDL tool to
+// produce the type library (AsdkDeepPropInspectorUI.tlb) and marshalling code.
+
+#include "olectl.h"
+import "oaidl.idl";
+import "ocidl.idl";
+//import "acadi.idl";
+
+[
+	uuid(9AAD2845-4D4B-43F6-A335-AE32633108AE),
+	version(1.0),
+	helpstring("AsdkDeepPropInspectorUI 1.0 Type Library")
+]
+library AsdkDeepPropInspectorUILib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+	//----- If the following import fails then it means that the type library 
+	//----- is not on the system path you can fix the problem in two ways:
+	//----- 1. Add it to the system wide PATH environment variable
+	//----- 2. Add it to the executable file list in Developer Studio. You can do
+	//----- this in using the Tools/Option menu and then choosing the 'Directories'
+	//----- tab and finally typing the full path at the Executable files section.
+
+	//----- Importing english is ok here. Autodesk doesn't localize this idl/tlb.
+	//----- axdb16enu.tlb is guaranteed to be available in all locales.
+	//----- If you want to provide localized typelib then you must import
+	//----- localized tlb here.
+	importlib("axdb16enu.tlb");
+
+	//- IAsdkSpinner
+	[
+		object,
+		uuid(6E6302B9-4EE3-443f-8183-DE2C57722325),
+		dual,
+		nonextensible,
+		helpstring("IAsdkSpinner Interface"),
+		pointer_default(unique)
+	]
+	interface IAsdkSpinner : IDispatch {
+		[propget, bindable, requestedit, id(DISPID_HWND)] HRESULT HWND([out, retval]LONG_PTR* pHWND);
+	} ;
+
+	[
+		uuid(6FFEEA70-E9E3-4ab7-849D-1B5911EC7E72),
+		helpstring("_IAsdkSpinnerEvents Interface")
+	]
+	dispinterface _IAsdkSpinnerEvents {
+		properties:
+		methods:
+	} ;
+
+	[
+		uuid(79A97213-610C-4e91-9F53-AF428492CA43),
+		helpstring("AsdkSpinner Class")
+	]
+	coclass AsdkSpinner {
+		[default] interface IAsdkSpinner ;
+		[default, source] dispinterface _IAsdkSpinnerEvents ;
+	} ;
+
+	//- IPieSectorsCount
+	[
+		object,
+		uuid(1BF306F9-F5E0-4e03-90F1-40E85A0BF8E1),
+		dual,
+		nonextensible,
+		helpstring("IPieSectorsCount Interface"),
+		pointer_default(unique)
+	]
+	interface IPieSectorsCount : IDispatch	{
+	} ;
+
+	[
+		uuid(B8594FEC-D059-4bc2-9967-D86EB9FBB7DA),
+		helpstring("PieSectorsCount Class")
+	]
+	coclass PieSectorsCount {
+		[default] interface IPieSectorsCount ;
+	} ;
+
+
+	//- IPieSectorsSpin
+	[
+		object,
+		uuid(295EF768-EF00-4e7c-935E-858772E2D0BF),
+		dual,
+		nonextensible,
+		helpstring("IPieSectorsSpin Interface"),
+		pointer_default(unique)
+	]
+	interface IPieSectorsSpin : IDispatch	{
+		[propget, id(1), helpstring("property Counter")] HRESULT Counter([out, retval] ULONG* pVal);
+	} ;
+
+	[
+		uuid(C254C627-905A-41df-B821-FE569B1ECA73),
+		helpstring("PieSectorsSpin Class")
+	]
+	coclass PieSectorsSpin {
+		[default] interface IPieSectorsSpin ;
+	} ;
+
+	//- IPieSectorExploded
+	[
+		object,
+		uuid(17105299-5894-427f-A6B6-ACC1A5CEB89A),
+		dual,
+		nonextensible,
+		helpstring("IPieSectorExploded Interface"),
+		pointer_default(unique)
+	]
+	interface IPieSectorExploded : IDispatch {
+	} ;
+
+	[
+		uuid(31DF0413-9691-4c45-9EAB-E7D397F19362),
+		helpstring("PieSectorExploded Class")
+	]
+	coclass PieSectorExploded {
+		[default] interface IPieSectorExploded ;
+	} ;
+
+	//- IPieSectorImage
+	[
+		object,
+		uuid(80ACF585-655E-4619-8287-184500636D48),
+		dual,
+		nonextensible,
+		helpstring("IPieSectorImage Interface"),
+		pointer_default(unique)
+	]
+	interface IPieSectorImage : IDispatch {
+	} ;
+	[
+		uuid(14A844BA-9FE4-47ED-9CDC-69270A77E172),
+		helpstring("PieSectorImage Class")
+	]
+	coclass PieSectorImage {
+		[default] interface IPieSectorImage ;
+	} ;
+
+	//- IPieSectorColor
+	[
+		object,
+		uuid(8F676F52-452D-4f13-9124-3E2BF21AC66A),
+		dual,
+		nonextensible,
+		helpstring("IPieSectorColor Interface"),
+		pointer_default(unique)
+	]
+	interface IPieSectorColor : IDispatch {
+	} ;
+
+	[
+		uuid(3F931CE4-524D-4857-A261-F9392943EBF8),
+		helpstring("PieSectorColor Class")
+	]
+	coclass PieSectorColor {
+		[default] interface IPieSectorColor ;
+	} ;
+
+};

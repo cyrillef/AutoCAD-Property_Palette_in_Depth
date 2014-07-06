@@ -1,0 +1,26 @@
+HKCR
+{
+	DeepPropInspectorUI.PieSectorsCount.1 = s 'PieSectorsCount Class'
+	{
+		CLSID = s '{B8594FEC-D059-4bc2-9967-D86EB9FBB7DA}'
+	}
+	DeepPropInspectorUI.PieSectorsCount = s 'PieSectorsCount Class'
+	{
+		CLSID = s '{B8594FEC-D059-4bc2-9967-D86EB9FBB7DA}'
+		CurVer = s 'DeepPropInspectorUI.PieSectorsCount.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {B8594FEC-D059-4bc2-9967-D86EB9FBB7DA} = s 'PieSectorsCount Class'
+		{
+			ProgID = s 'DeepPropInspectorUI.PieSectorsCount.1'
+			VersionIndependentProgID = s 'DeepPropInspectorUI.PieSectorsCount'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{9AAD2845-4D4B-43F6-A335-AE32633108AE}'
+		}
+	}
+}

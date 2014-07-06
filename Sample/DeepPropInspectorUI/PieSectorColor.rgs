@@ -1,0 +1,27 @@
+HKCR
+{
+	DeepPropInspectorUI.PieSectorColor.1 = s 'PieSectorColor Class'
+	{
+		CLSID = s '{3F931CE4-524D-4857-A261-F9392943EBF8}'
+	}
+	DeepPropInspectorUI.PieSectorColor = s 'PieSectorColor Class'
+	{
+		CLSID = s '{3F931CE4-524D-4857-A261-F9392943EBF8}'
+		CurVer = s 'DeepPropInspectorUI.PieSectorColor.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {3F931CE4-524D-4857-A261-F9392943EBF8} = s 'PieSectorColor Class'
+		{
+			ProgID = s 'DeepPropInspectorUI.PieSectorColor.1'
+			VersionIndependentProgID = s 'DeepPropInspectorUI.PieSectorColor'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{9AAD2845-4D4B-43F6-A335-AE32633108AE}'
+		}
+	}
+}

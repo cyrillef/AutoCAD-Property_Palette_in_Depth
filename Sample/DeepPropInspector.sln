@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DeepPropInspector", "DeepPropInspector\DeepPropInspector.vcproj", "{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DeepPropInspectorUI", "DeepPropInspectorUI\DeepPropInspectorUI.vcproj", "{4B36304D-F0EC-4DC3-B62F-2C1BCCA50EBD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0} = {7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}.Debug.ActiveCfg = Debug|Win32
+		{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}.Debug.Build.0 = Debug|Win32
+		{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}.Release.ActiveCfg = Release|Win32
+		{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}.Release.Build.0 = Release|Win32
+		{4B36304D-F0EC-4DC3-B62F-2C1BCCA50EBD}.Debug.ActiveCfg = Debug|Win32
+		{4B36304D-F0EC-4DC3-B62F-2C1BCCA50EBD}.Debug.Build.0 = Debug|Win32
+		{4B36304D-F0EC-4DC3-B62F-2C1BCCA50EBD}.Release.ActiveCfg = Release|Win32
+		{4B36304D-F0EC-4DC3-B62F-2C1BCCA50EBD}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
