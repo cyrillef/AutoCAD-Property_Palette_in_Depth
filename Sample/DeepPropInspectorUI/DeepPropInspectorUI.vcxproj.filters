@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{9583d1a3-fb69-45a9-b858-0b12850e4081}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;idl;odl</Extensions>
+    </Filter>
+    <Filter Include="Include Files">
+      <UniqueIdentifier>{2f42166e-c3a5-4c0f-b86f-de465f4749f7}</UniqueIdentifier>
+      <Extensions>h;hh;hxx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{a303f372-b213-41a0-a234-e26848b2988c}</UniqueIdentifier>
+      <Extensions>rc;ico;bmp;cur;jpg;gif</Extensions>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{e175c32c-e4bb-41cd-951b-0fa66f73135b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Spinner Control">
+      <UniqueIdentifier>{10ced25d-4916-43ab-bd18-9e09693c1d98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pie Sector Dynamic Properties">
+      <UniqueIdentifier>{776a64a4-5a61-460f-b785-4470505f668b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pie Sector Dynamic Properties\Count &amp; Spinner">
+      <UniqueIdentifier>{31c72b54-42a6-48aa-b224-ea5e447b4757}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pie Sector Dynamic Properties\Exploded">
+      <UniqueIdentifier>{8117cfa6-28cf-4fe5-9d03-a5b95c710330}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pie Sector Dynamic Properties\Image">
+      <UniqueIdentifier>{0a11f198-9350-431a-afa7-5af476498a46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pie Sector Dynamic Properties\Color">
+      <UniqueIdentifier>{8fd48823-b802-488e-ba05-f3af0413e2e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pie Jig">
+      <UniqueIdentifier>{b97908df-075a-42bc-b721-74066a205918}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="acrxEntryPoint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DeepPropInspectorUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DocData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RxTrace.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="AsdkSpinner.cpp">
+      <Filter>Spinner Control</Filter>
+    </ClCompile>
+    <ClCompile Include="PieSectorsCount.cpp">
+      <Filter>Pie Sector Dynamic Properties\Count &amp; Spinner</Filter>
+    </ClCompile>
+    <ClCompile Include="PieSectorsSpin.cpp">
+      <Filter>Pie Sector Dynamic Properties\Count &amp; Spinner</Filter>
+    </ClCompile>
+    <ClCompile Include="PieSectorExploded.cpp">
+      <Filter>Pie Sector Dynamic Properties\Exploded</Filter>
+    </ClCompile>
+    <ClCompile Include="PieSectorImage.cpp">
+      <Filter>Pie Sector Dynamic Properties\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="PieSectorColor.cpp">
+      <Filter>Pie Sector Dynamic Properties\Color</Filter>
+    </ClCompile>
+    <ClCompile Include="AsdkPieJig.cpp">
+      <Filter>Pie Jig</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DeepPropInspectorUI.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="DeepPropInspectorUI.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="AsdkSpinner.rgs">
+      <Filter>Spinner Control</Filter>
+    </None>
+    <None Include="PieSectorsCount.rgs">
+      <Filter>Pie Sector Dynamic Properties\Count &amp; Spinner</Filter>
+    </None>
+    <None Include="PieSectorsSpin.rgs">
+      <Filter>Pie Sector Dynamic Properties\Count &amp; Spinner</Filter>
+    </None>
+    <None Include="PieSectorExploded.rgs">
+      <Filter>Pie Sector Dynamic Properties\Exploded</Filter>
+    </None>
+    <None Include="PieSectorImage.rgs">
+      <Filter>Pie Sector Dynamic Properties\Image</Filter>
+    </None>
+    <None Include="PieSectorColor.rgs">
+      <Filter>Pie Sector Dynamic Properties\Color</Filter>
+    </None>
+    <None Include="cpp.hint" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="DeepPropInspectorUI.idl">
+      <Filter>Source Files</Filter>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DocData.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="COM Defines.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ErrorStatus.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="RxTrace.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="AsdkSpinner.h">
+      <Filter>Spinner Control</Filter>
+    </ClInclude>
+    <ClInclude Include="AsdkSpinnerEvents_CP.h">
+      <Filter>Spinner Control</Filter>
+    </ClInclude>
+    <ClInclude Include="ProxyIAcPi.h">
+      <Filter>Spinner Control</Filter>
+    </ClInclude>
+    <ClInclude Include="DynPropBase.h">
+      <Filter>Pie Sector Dynamic Properties</Filter>
+    </ClInclude>
+    <ClInclude Include="DynPropOrder.h">
+      <Filter>Pie Sector Dynamic Properties</Filter>
+    </ClInclude>
+    <ClInclude Include="PieSectorsCount.h">
+      <Filter>Pie Sector Dynamic Properties\Count &amp; Spinner</Filter>
+    </ClInclude>
+    <ClInclude Include="PieSectorsSpin.h">
+      <Filter>Pie Sector Dynamic Properties\Count &amp; Spinner</Filter>
+    </ClInclude>
+    <ClInclude Include="PieSectorExploded.h">
+      <Filter>Pie Sector Dynamic Properties\Exploded</Filter>
+    </ClInclude>
+    <ClInclude Include="PieSectorImage.h">
+      <Filter>Pie Sector Dynamic Properties\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="PieSectorColor.h">
+      <Filter>Pie Sector Dynamic Properties\Color</Filter>
+    </ClInclude>
+    <ClInclude Include="AsdkPieJig.h">
+      <Filter>Pie Jig</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DeepPropInspectorUI.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="AsdkSpinner.bmp">
+      <Filter>Spinner Control</Filter>
+    </Image>
+    <Image Include="E.bmp">
+      <Filter>Pie Sector Dynamic Properties\Image</Filter>
+    </Image>
+    <Image Include="I.bmp">
+      <Filter>Pie Sector Dynamic Properties\Image</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

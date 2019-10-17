@@ -86,7 +86,7 @@ STDMETHODIMP CPieSectorsSpin::GetGUID (GUID *pPropGUID) {
 //-----------------------------------------------------------------------------
 STDMETHODIMP CPieSectorsSpin::GetDisplayName (BSTR *pBstrName) {
 	CHECKOUTPARAM( pBstrName ) ;
-	*pBstrName =::SysAllocString (L"Sector Spin") ;
+	*pBstrName =::SysAllocString (L"Sector Spin");	
 	return (S_OK) ;
 }
 
@@ -187,7 +187,7 @@ STDMETHODIMP CPieSectorsSpin::GetCustomPropertyCtrl (VARIANT varId, LCID lcid, B
 		PER_PROP_DISP_ENTRY *pPerPropDispEntry =(PER_PROP_DISP_ENTRY*)(&(*(arr.begin ()))) ;
 		if ( pPerPropDispEntry == NULL )
 			throw "" ;
-		*pProgId =::SysAllocString (A2OLE(pPerPropDispEntry->m_ProgID)) ;
+		*pProgId =::SysAllocString (pPerPropDispEntry->m_ProgID) ;
 	} catch (...) {
 		return (IAcPiPropertyDisplayImpl<CPieSectorsSpin>::GetCustomPropertyCtrl (varId, lcid, pProgId)) ;
 	}

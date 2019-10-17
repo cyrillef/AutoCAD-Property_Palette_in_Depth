@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{e275f4d7-2714-45e8-a6eb-4054c7b47460}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;idl;odl</Extensions>
+    </Filter>
+    <Filter Include="Include Files">
+      <UniqueIdentifier>{589d6eab-db09-4cda-af25-92e83ea642aa}</UniqueIdentifier>
+      <Extensions>h;hh;hxx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{4275be3d-4ccb-4d54-b030-0714cac89103}</UniqueIdentifier>
+      <Extensions>rc;ico;bmp;cur;jpg;gif</Extensions>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{9590a3f8-6b0e-4087-9ef8-659c97fe44d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pie Objects">
+      <UniqueIdentifier>{df16d621-0561-4071-ae0c-9b8b6cc8e1b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pie Objects\Pie Sectors Collection">
+      <UniqueIdentifier>{e99ad6a6-c325-49ce-bea8-0a4be6d06cc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pie Objects\Pie Sector Objects">
+      <UniqueIdentifier>{c5145f6a-36ec-4cf1-8daa-807fda2999ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pie Objects\Pie Main Objets">
+      <UniqueIdentifier>{85f19170-b915-4c85-9d3c-3abb50143fcd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Acad Templates">
+      <UniqueIdentifier>{fe06df0f-1782-4afd-b04d-caec474ceeb7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="acrxEntryPoint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DeepPropInspector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawUtils.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="RxTrace.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="AcadPieSectors.cpp">
+      <Filter>Pie Objects\Pie Sectors Collection</Filter>
+    </ClCompile>
+    <ClCompile Include="AcadPieSectorsEnum.cpp">
+      <Filter>Pie Objects\Pie Sectors Collection</Filter>
+    </ClCompile>
+    <ClCompile Include="AcadPieSector.cpp">
+      <Filter>Pie Objects\Pie Sector Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="AsdkPieSector.cpp">
+      <Filter>Pie Objects\Pie Sector Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="AcadPie.cpp">
+      <Filter>Pie Objects\Pie Main Objets</Filter>
+    </ClCompile>
+    <ClCompile Include="AsdkPie.cpp">
+      <Filter>Pie Objects\Pie Main Objets</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DeepPropInspector.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="DeepPropInspector.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="AcadPieSectors.rgs">
+      <Filter>Pie Objects\Pie Sectors Collection</Filter>
+    </None>
+    <None Include="AcadPieSectorsEnum.rgs">
+      <Filter>Pie Objects\Pie Sectors Collection</Filter>
+    </None>
+    <None Include="AcadPieSector.rgs">
+      <Filter>Pie Objects\Pie Sector Objects</Filter>
+    </None>
+    <None Include="AcadPie.rgs">
+      <Filter>Pie Objects\Pie Main Objets</Filter>
+    </None>
+    <None Include="cpp.hint" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="DeepPropInspector.idl">
+      <Filter>Source Files</Filter>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="COM Defines.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawUtils.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ErrorStatus.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="RxTrace.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="AcadPieSectors.h">
+      <Filter>Pie Objects\Pie Sectors Collection</Filter>
+    </ClInclude>
+    <ClInclude Include="AcadPieSectorsEnum.h">
+      <Filter>Pie Objects\Pie Sectors Collection</Filter>
+    </ClInclude>
+    <ClInclude Include="AcadPieSector.h">
+      <Filter>Pie Objects\Pie Sector Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="AsdkPieSector.h">
+      <Filter>Pie Objects\Pie Sector Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="AcadPie.h">
+      <Filter>Pie Objects\Pie Main Objets</Filter>
+    </ClInclude>
+    <ClInclude Include="AsdkPie.h">
+      <Filter>Pie Objects\Pie Main Objets</Filter>
+    </ClInclude>
+    <ClInclude Include="IAcad3dFaceImpl.h">
+      <Filter>Acad Templates</Filter>
+    </ClInclude>
+    <ClInclude Include="IAcadArcImpl.h">
+      <Filter>Acad Templates</Filter>
+    </ClInclude>
+    <ClInclude Include="IAcadCircleImpl.h">
+      <Filter>Acad Templates</Filter>
+    </ClInclude>
+    <ClInclude Include="IAcadEllipseImpl.h">
+      <Filter>Acad Templates</Filter>
+    </ClInclude>
+    <ClInclude Include="IAcadLineImpl.h">
+      <Filter>Acad Templates</Filter>
+    </ClInclude>
+    <ClInclude Include="IAcadLWPolylineImpl.h">
+      <Filter>Acad Templates</Filter>
+    </ClInclude>
+    <ClInclude Include="IAcadMTextImpl.h">
+      <Filter>Acad Templates</Filter>
+    </ClInclude>
+    <ClInclude Include="IAcadPointImpl.h">
+      <Filter>Acad Templates</Filter>
+    </ClInclude>
+    <ClInclude Include="IAcadSplineImpl.h">
+      <Filter>Acad Templates</Filter>
+    </ClInclude>
+    <ClInclude Include="IBaseObjectImpl.h">
+      <Filter>Acad Templates</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DeepPropInspector.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

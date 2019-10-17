@@ -28,7 +28,7 @@
 #include "AsdkPieJig.h"
 
 //-----------------------------------------------------------------------------
-#define szRDS _RXST("Asdk")
+#define szRDS _RXST(_T("Asdk"))
 
 //-----------------------------------------------------------------------------
 //----- ObjectARX EntryPoint
@@ -38,13 +38,15 @@ public:
 	CDeepPropInspectorUIApp () : AcRxArxApp () {}
 
 	virtual AcRx::AppRetCode On_kInitAppMsg (void *pkt) {
-		if ( ::acrxAppIsLoaded ("AsdkDeepPropInspector.dbx") == false ) {
-			if ( acrxLoadModule ("AsdkDeepPropInspector.dbx", false, true) == false ) {
+		if ( ::acrxAppIsLoaded (_T("DeepPropInspector.dbx")) == false ) 
+			{
+			if ( acrxLoadModule (_T("DeepPropInspector.dbx"), false, true) == false ) 
+				{
 				RXASSERT( 0 ) ;
 				return (AcRx::kRetError) ;
 			}
 		}
-		acrxLoadModule ("AsdkDeepPropInspector.dbx", false, false) ;
+		acrxLoadModule (_T("DeepPropInspector.dbx"), false, false) ;
 
 		AcRx::AppRetCode retCode =AcRxArxApp::On_kInitAppMsg (pkt) ;
 
@@ -54,7 +56,7 @@ public:
 	virtual AcRx::AppRetCode On_kUnloadAppMsg (void *pkt) {
 		AcRx::AppRetCode retCode =AcRxArxApp::On_kUnloadAppMsg (pkt) ;
 
-		acrxUnloadModule ("AsdkDeepPropInspector.dbx", false) ;
+		acrxUnloadModule (_T("DeepPropInspector.dbx"), false) ;
 
 		return (retCode) ;
 	}

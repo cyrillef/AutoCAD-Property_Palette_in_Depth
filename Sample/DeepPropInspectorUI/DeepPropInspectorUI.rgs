@@ -3,7 +3,7 @@ HKCR
 	NoRemove AppID
 	{
 		'%APPID%' = s 'DeepPropInspectorUI'
-		'AsdkDeepPropInspectorUI.arx'
+		'DeepPropInspectorUI.arx'
 		{
 			val AppID = s '%APPID%'
 		}

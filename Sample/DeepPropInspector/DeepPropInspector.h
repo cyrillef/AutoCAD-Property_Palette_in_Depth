@@ -3,25 +3,24 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 6.00.0361 */
-/* at Tue Aug 17 09:59:20 2004
+ /* File created by MIDL compiler version 8.01.0622 */
+/* at Tue Jan 19 08:44:07 2038
  */
-/* Compiler settings for .\DeepPropInspector.idl:
-    Oicf, W1, Zp8, env=Win32 (32b run)
-    protocol : dce , ms_ext, c_ext, robust
+/* Compiler settings for DeepPropInspector.idl:
+    Oicf, W1, Zp8, env=Win64 (32b run), target_arch=AMD64 8.01.0622 
+    protocol : all , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
     VC __declspec() decoration level: 
          __declspec(uuid()), __declspec(selectany), __declspec(novtable)
          DECLSPEC_UUID(), MIDL_INTERFACE()
 */
-//@@MIDL_FILE_HEADING(  )
+/* @@MIDL_FILE_HEADING(  ) */
 
-#pragma warning( disable: 4049 )  /* more than 64k source lines */
 
 
 /* verify that the <rpcndr.h> version is high enough to compile this file*/
 #ifndef __REQUIRED_RPCNDR_H_VERSION__
-#define __REQUIRED_RPCNDR_H_VERSION__ 475
+#define __REQUIRED_RPCNDR_H_VERSION__ 500
 #endif
 
 #include "rpc.h"
@@ -29,7 +28,7 @@
 
 #ifndef __RPCNDR_H_VERSION__
 #error this stub requires an updated version of <rpcndr.h>
-#endif // __RPCNDR_H_VERSION__
+#endif /* __RPCNDR_H_VERSION__ */
 
 
 #ifndef __DeepPropInspector_h__
@@ -44,6 +43,7 @@
 #ifndef __IAcadPieSector_FWD_DEFINED__
 #define __IAcadPieSector_FWD_DEFINED__
 typedef interface IAcadPieSector IAcadPieSector;
+
 #endif 	/* __IAcadPieSector_FWD_DEFINED__ */
 
 
@@ -62,6 +62,7 @@ typedef struct AcadPieSector AcadPieSector;
 #ifndef __IAcadPieSectors_FWD_DEFINED__
 #define __IAcadPieSectors_FWD_DEFINED__
 typedef interface IAcadPieSectors IAcadPieSectors;
+
 #endif 	/* __IAcadPieSectors_FWD_DEFINED__ */
 
 
@@ -92,6 +93,7 @@ typedef struct AcadPieSectorsEnum AcadPieSectorsEnum;
 #ifndef __IAcadPie_FWD_DEFINED__
 #define __IAcadPie_FWD_DEFINED__
 typedef interface IAcadPie IAcadPie;
+
 #endif 	/* __IAcadPie_FWD_DEFINED__ */
 
 
@@ -115,8 +117,6 @@ typedef struct AcadPie AcadPie;
 extern "C"{
 #endif 
 
-void * __RPC_USER MIDL_user_allocate(size_t);
-void __RPC_USER MIDL_user_free( void * ); 
 
 
 #ifndef __AsdkDeepPropInspectorLib_LIBRARY_DEFINED__
@@ -163,6 +163,7 @@ EXTERN_C const IID IID_IAcadPieSector;
         
     };
     
+    
 #else 	/* C style interface */
 
     typedef struct IAcadPieSectorVtbl
@@ -172,7 +173,8 @@ EXTERN_C const IID IID_IAcadPieSector;
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
             IAcadPieSector * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void **ppvObject);
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             IAcadPieSector * This);
@@ -194,20 +196,28 @@ EXTERN_C const IID IID_IAcadPieSector;
             IAcadPieSector * This,
             /* [in] */ REFIID riid,
             /* [size_is][in] */ LPOLESTR *rgszNames,
-            /* [in] */ UINT cNames,
+            /* [range][in] */ UINT cNames,
             /* [in] */ LCID lcid,
             /* [size_is][out] */ DISPID *rgDispId);
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
             IAcadPieSector * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS *pDispParams,
-            /* [out] */ VARIANT *pVarResult,
-            /* [out] */ EXCEPINFO *pExcepInfo,
-            /* [out] */ UINT *puArgErr);
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
         /* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Exploded )( 
             IAcadPieSector * This,
@@ -247,123 +257,51 @@ EXTERN_C const IID IID_IAcadPieSector;
 
 
 #define IAcadPieSector_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define IAcadPieSector_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define IAcadPieSector_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define IAcadPieSector_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
 #define IAcadPieSector_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
 #define IAcadPieSector_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
 #define IAcadPieSector_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
 #define IAcadPieSector_get_Exploded(This,pVal)	\
-    (This)->lpVtbl -> get_Exploded(This,pVal)
+    ( (This)->lpVtbl -> get_Exploded(This,pVal) ) 
 
 #define IAcadPieSector_put_Exploded(This,newVal)	\
-    (This)->lpVtbl -> put_Exploded(This,newVal)
+    ( (This)->lpVtbl -> put_Exploded(This,newVal) ) 
 
 #define IAcadPieSector_get_TrueColor(This,ppColor)	\
-    (This)->lpVtbl -> get_TrueColor(This,ppColor)
+    ( (This)->lpVtbl -> get_TrueColor(This,ppColor) ) 
 
 #define IAcadPieSector_put_TrueColor(This,pColor)	\
-    (This)->lpVtbl -> put_TrueColor(This,pColor)
+    ( (This)->lpVtbl -> put_TrueColor(This,pColor) ) 
 
 #define IAcadPieSector_get_Color(This,pColor)	\
-    (This)->lpVtbl -> get_Color(This,pColor)
+    ( (This)->lpVtbl -> get_Color(This,pColor) ) 
 
 #define IAcadPieSector_put_Color(This,cColor)	\
-    (This)->lpVtbl -> put_Color(This,cColor)
+    ( (This)->lpVtbl -> put_Color(This,cColor) ) 
 
 #endif /* COBJMACROS */
 
 
 #endif 	/* C style interface */
 
-
-
-/* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE IAcadPieSector_get_Exploded_Proxy( 
-    IAcadPieSector * This,
-    /* [retval][out] */ VARIANT_BOOL *pVal);
-
-
-void __RPC_STUB IAcadPieSector_get_Exploded_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id][propput] */ HRESULT STDMETHODCALLTYPE IAcadPieSector_put_Exploded_Proxy( 
-    IAcadPieSector * This,
-    /* [in] */ VARIANT_BOOL newVal);
-
-
-void __RPC_STUB IAcadPieSector_put_Exploded_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE IAcadPieSector_get_TrueColor_Proxy( 
-    IAcadPieSector * This,
-    /* [retval][out] */ /* external definition not present */ IAcadAcCmColor **ppColor);
-
-
-void __RPC_STUB IAcadPieSector_get_TrueColor_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id][propput] */ HRESULT STDMETHODCALLTYPE IAcadPieSector_put_TrueColor_Proxy( 
-    IAcadPieSector * This,
-    /* [in] */ /* external definition not present */ IAcadAcCmColor *pColor);
-
-
-void __RPC_STUB IAcadPieSector_put_TrueColor_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE IAcadPieSector_get_Color_Proxy( 
-    IAcadPieSector * This,
-    /* [retval][out] */ /* external definition not present */ ACAD_COLOR *pColor);
-
-
-void __RPC_STUB IAcadPieSector_get_Color_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id][propput] */ HRESULT STDMETHODCALLTYPE IAcadPieSector_put_Color_Proxy( 
-    IAcadPieSector * This,
-    /* [in] */ /* external definition not present */ ACAD_COLOR cColor);
-
-
-void __RPC_STUB IAcadPieSector_put_Color_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
 
 
 
@@ -409,6 +347,7 @@ EXTERN_C const IID IID_IAcadPieSectors;
         
     };
     
+    
 #else 	/* C style interface */
 
     typedef struct IAcadPieSectorsVtbl
@@ -418,7 +357,8 @@ EXTERN_C const IID IID_IAcadPieSectors;
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
             IAcadPieSectors * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void **ppvObject);
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             IAcadPieSectors * This);
@@ -440,20 +380,28 @@ EXTERN_C const IID IID_IAcadPieSectors;
             IAcadPieSectors * This,
             /* [in] */ REFIID riid,
             /* [size_is][in] */ LPOLESTR *rgszNames,
-            /* [in] */ UINT cNames,
+            /* [range][in] */ UINT cNames,
             /* [in] */ LCID lcid,
             /* [size_is][out] */ DISPID *rgDispId);
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
             IAcadPieSectors * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS *pDispParams,
-            /* [out] */ VARIANT *pVarResult,
-            /* [out] */ EXCEPINFO *pExcepInfo,
-            /* [out] */ UINT *puArgErr);
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
         /* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Count )( 
             IAcadPieSectors * This,
@@ -487,95 +435,45 @@ EXTERN_C const IID IID_IAcadPieSectors;
 
 
 #define IAcadPieSectors_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define IAcadPieSectors_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define IAcadPieSectors_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define IAcadPieSectors_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
 #define IAcadPieSectors_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
 #define IAcadPieSectors_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
 #define IAcadPieSectors_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
 #define IAcadPieSectors_get_Count(This,pVal)	\
-    (This)->lpVtbl -> get_Count(This,pVal)
+    ( (This)->lpVtbl -> get_Count(This,pVal) ) 
 
 #define IAcadPieSectors_get_Item(This,vIndex,ppUnk)	\
-    (This)->lpVtbl -> get_Item(This,vIndex,ppUnk)
+    ( (This)->lpVtbl -> get_Item(This,vIndex,ppUnk) ) 
 
 #define IAcadPieSectors_get__NewEnum(This,ppUnk)	\
-    (This)->lpVtbl -> get__NewEnum(This,ppUnk)
+    ( (This)->lpVtbl -> get__NewEnum(This,ppUnk) ) 
 
 #define IAcadPieSectors_AddSimpleSector(This,val,ppSector)	\
-    (This)->lpVtbl -> AddSimpleSector(This,val,ppSector)
+    ( (This)->lpVtbl -> AddSimpleSector(This,val,ppSector) ) 
 
 #endif /* COBJMACROS */
 
 
 #endif 	/* C style interface */
 
-
-
-/* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE IAcadPieSectors_get_Count_Proxy( 
-    IAcadPieSectors * This,
-    /* [retval][out] */ long *pVal);
-
-
-void __RPC_STUB IAcadPieSectors_get_Count_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE IAcadPieSectors_get_Item_Proxy( 
-    IAcadPieSectors * This,
-    /* [in] */ VARIANT vIndex,
-    /* [retval][out] */ IUnknown **ppUnk);
-
-
-void __RPC_STUB IAcadPieSectors_get_Item_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id][restricted][propget] */ HRESULT STDMETHODCALLTYPE IAcadPieSectors_get__NewEnum_Proxy( 
-    IAcadPieSectors * This,
-    /* [retval][out] */ IUnknown **ppUnk);
-
-
-void __RPC_STUB IAcadPieSectors_get__NewEnum_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id] */ HRESULT STDMETHODCALLTYPE IAcadPieSectors_AddSimpleSector_Proxy( 
-    IAcadPieSectors * This,
-    /* [in] */ DOUBLE val,
-    /* [out] */ IAcadPieSector **ppSector);
-
-
-void __RPC_STUB IAcadPieSectors_AddSimpleSector_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
 
 
 
@@ -635,6 +533,7 @@ EXTERN_C const IID IID_IAcadPie;
             /* [retval][out] */ IAcadPieSectors **ppVal) = 0;
         
     };
+    
     
 #else 	/* C style interface */
 
@@ -716,7 +615,7 @@ EXTERN_C const IID IID_IAcadPie;
         
         /* [id][propget][funcdescattr] */ HRESULT ( STDMETHODCALLTYPE *get_ObjectID )( 
             IAcadPie * This,
-            /* [retval][out] */ signed long *retval);
+            /* [retval][out] */ LONG_PTR *retval);
         
         /* [id][propget][funcdescattr] */ HRESULT ( STDMETHODCALLTYPE *get_Application )( 
             IAcadPie * This,
@@ -736,7 +635,7 @@ EXTERN_C const IID IID_IAcadPie;
         
         /* [id][propget][funcdescattr] */ HRESULT ( STDMETHODCALLTYPE *get_OwnerID )( 
             IAcadPie * This,
-            /* [retval][out] */ signed long *retval);
+            /* [retval][out] */ LONG_PTR *retval);
         
         /* [id][propget][funcdescattr] */ HRESULT ( STDMETHODCALLTYPE *get_Document )( 
             IAcadPie * This,
@@ -894,9 +793,27 @@ EXTERN_C const IID IID_IAcadPie;
             /* [in][idldescattr] */ ACAD_LWEIGHT noname,
             /* [retval][out] */ void *retval);
         
+        /* [id][propget][funcdescattr] */ HRESULT ( STDMETHODCALLTYPE *get_EntityTransparency )( 
+            IAcadPie * This,
+            /* [retval][out] */ BSTR *retval);
+        
+        /* [id][propput][funcdescattr] */ HRESULT ( STDMETHODCALLTYPE *put_EntityTransparency )( 
+            IAcadPie * This,
+            /* [in][idldescattr] */ BSTR noname,
+            /* [retval][out] */ void *retval);
+        
         /* [id][propget][funcdescattr] */ HRESULT ( STDMETHODCALLTYPE *get_Hyperlinks )( 
             IAcadPie * This,
             /* [retval][out] */ IAcadHyperlinks **retval);
+        
+        /* [id][propget][funcdescattr] */ HRESULT ( STDMETHODCALLTYPE *get_Material )( 
+            IAcadPie * This,
+            /* [retval][out] */ BSTR *retval);
+        
+        /* [id][propput][funcdescattr] */ HRESULT ( STDMETHODCALLTYPE *put_Material )( 
+            IAcadPie * This,
+            /* [in][idldescattr] */ BSTR noname,
+            /* [retval][out] */ void *retval);
         
         /* [id][propget][funcdescattr] */ HRESULT ( STDMETHODCALLTYPE *get_EntityName )( 
             IAcadPie * This,
@@ -1025,320 +942,248 @@ EXTERN_C const IID IID_IAcadPie;
 
 
 #define IAcadPie_QueryInterface(This,riid,ppvObj,retval)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObj,retval)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObj,retval) ) 
 
 #define IAcadPie_AddRef(This,retval)	\
-    (This)->lpVtbl -> AddRef(This,retval)
+    ( (This)->lpVtbl -> AddRef(This,retval) ) 
 
 #define IAcadPie_Release(This,retval)	\
-    (This)->lpVtbl -> Release(This,retval)
+    ( (This)->lpVtbl -> Release(This,retval) ) 
 
 #define IAcadPie_GetTypeInfoCount(This,pctinfo,retval)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo,retval)
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo,retval) ) 
 
 #define IAcadPie_GetTypeInfo(This,itinfo,lcid,pptinfo,retval)	\
-    (This)->lpVtbl -> GetTypeInfo(This,itinfo,lcid,pptinfo,retval)
+    ( (This)->lpVtbl -> GetTypeInfo(This,itinfo,lcid,pptinfo,retval) ) 
 
 #define IAcadPie_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgdispid,retval)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgdispid,retval)
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgdispid,retval) ) 
 
 #define IAcadPie_Invoke(This,dispidMember,riid,lcid,wFlags,pdispparams,pvarResult,pexcepinfo,puArgErr,retval)	\
-    (This)->lpVtbl -> Invoke(This,dispidMember,riid,lcid,wFlags,pdispparams,pvarResult,pexcepinfo,puArgErr,retval)
+    ( (This)->lpVtbl -> Invoke(This,dispidMember,riid,lcid,wFlags,pdispparams,pvarResult,pexcepinfo,puArgErr,retval) ) 
 
 #define IAcadPie_get_Handle(This,retval)	\
-    (This)->lpVtbl -> get_Handle(This,retval)
+    ( (This)->lpVtbl -> get_Handle(This,retval) ) 
 
 #define IAcadPie_get_ObjectName(This,retval)	\
-    (This)->lpVtbl -> get_ObjectName(This,retval)
+    ( (This)->lpVtbl -> get_ObjectName(This,retval) ) 
 
 #define IAcadPie_GetXData(This,AppName,XDataType,XDataValue,retval)	\
-    (This)->lpVtbl -> GetXData(This,AppName,XDataType,XDataValue,retval)
+    ( (This)->lpVtbl -> GetXData(This,AppName,XDataType,XDataValue,retval) ) 
 
 #define IAcadPie_SetXData(This,XDataType,XDataValue,retval)	\
-    (This)->lpVtbl -> SetXData(This,XDataType,XDataValue,retval)
+    ( (This)->lpVtbl -> SetXData(This,XDataType,XDataValue,retval) ) 
 
 #define IAcadPie_Delete(This,retval)	\
-    (This)->lpVtbl -> Delete(This,retval)
+    ( (This)->lpVtbl -> Delete(This,retval) ) 
 
 #define IAcadPie_get_ObjectID(This,retval)	\
-    (This)->lpVtbl -> get_ObjectID(This,retval)
+    ( (This)->lpVtbl -> get_ObjectID(This,retval) ) 
 
 #define IAcadPie_get_Application(This,retval)	\
-    (This)->lpVtbl -> get_Application(This,retval)
+    ( (This)->lpVtbl -> get_Application(This,retval) ) 
 
 #define IAcadPie_get_Database(This,retval)	\
-    (This)->lpVtbl -> get_Database(This,retval)
+    ( (This)->lpVtbl -> get_Database(This,retval) ) 
 
 #define IAcadPie_get_HasExtensionDictionary(This,retval)	\
-    (This)->lpVtbl -> get_HasExtensionDictionary(This,retval)
+    ( (This)->lpVtbl -> get_HasExtensionDictionary(This,retval) ) 
 
 #define IAcadPie_GetExtensionDictionary(This,retval)	\
-    (This)->lpVtbl -> GetExtensionDictionary(This,retval)
+    ( (This)->lpVtbl -> GetExtensionDictionary(This,retval) ) 
 
 #define IAcadPie_get_OwnerID(This,retval)	\
-    (This)->lpVtbl -> get_OwnerID(This,retval)
+    ( (This)->lpVtbl -> get_OwnerID(This,retval) ) 
 
 #define IAcadPie_get_Document(This,retval)	\
-    (This)->lpVtbl -> get_Document(This,retval)
+    ( (This)->lpVtbl -> get_Document(This,retval) ) 
 
 #define IAcadPie_Erase(This,retval)	\
-    (This)->lpVtbl -> Erase(This,retval)
+    ( (This)->lpVtbl -> Erase(This,retval) ) 
 
 #define IAcadPie_get_TrueColor(This,retval)	\
-    (This)->lpVtbl -> get_TrueColor(This,retval)
+    ( (This)->lpVtbl -> get_TrueColor(This,retval) ) 
 
 #define IAcadPie_put_TrueColor(This,noname,retval)	\
-    (This)->lpVtbl -> put_TrueColor(This,noname,retval)
+    ( (This)->lpVtbl -> put_TrueColor(This,noname,retval) ) 
 
 #define IAcadPie_get_Layer(This,retval)	\
-    (This)->lpVtbl -> get_Layer(This,retval)
+    ( (This)->lpVtbl -> get_Layer(This,retval) ) 
 
 #define IAcadPie_put_Layer(This,noname,retval)	\
-    (This)->lpVtbl -> put_Layer(This,noname,retval)
+    ( (This)->lpVtbl -> put_Layer(This,noname,retval) ) 
 
 #define IAcadPie_get_Linetype(This,retval)	\
-    (This)->lpVtbl -> get_Linetype(This,retval)
+    ( (This)->lpVtbl -> get_Linetype(This,retval) ) 
 
 #define IAcadPie_put_Linetype(This,noname,retval)	\
-    (This)->lpVtbl -> put_Linetype(This,noname,retval)
+    ( (This)->lpVtbl -> put_Linetype(This,noname,retval) ) 
 
 #define IAcadPie_get_LinetypeScale(This,retval)	\
-    (This)->lpVtbl -> get_LinetypeScale(This,retval)
+    ( (This)->lpVtbl -> get_LinetypeScale(This,retval) ) 
 
 #define IAcadPie_put_LinetypeScale(This,noname,retval)	\
-    (This)->lpVtbl -> put_LinetypeScale(This,noname,retval)
+    ( (This)->lpVtbl -> put_LinetypeScale(This,noname,retval) ) 
 
 #define IAcadPie_get_Visible(This,retval)	\
-    (This)->lpVtbl -> get_Visible(This,retval)
+    ( (This)->lpVtbl -> get_Visible(This,retval) ) 
 
 #define IAcadPie_put_Visible(This,noname,retval)	\
-    (This)->lpVtbl -> put_Visible(This,noname,retval)
+    ( (This)->lpVtbl -> put_Visible(This,noname,retval) ) 
 
 #define IAcadPie_ArrayPolar(This,NumberOfObjects,AngleToFill,CenterPoint,retval)	\
-    (This)->lpVtbl -> ArrayPolar(This,NumberOfObjects,AngleToFill,CenterPoint,retval)
+    ( (This)->lpVtbl -> ArrayPolar(This,NumberOfObjects,AngleToFill,CenterPoint,retval) ) 
 
 #define IAcadPie_ArrayRectangular(This,NumberOfRows,NumberOfColumns,NumberOfLevels,DistBetweenRows,DistBetweenCols,DistBetweenLevels,retval)	\
-    (This)->lpVtbl -> ArrayRectangular(This,NumberOfRows,NumberOfColumns,NumberOfLevels,DistBetweenRows,DistBetweenCols,DistBetweenLevels,retval)
+    ( (This)->lpVtbl -> ArrayRectangular(This,NumberOfRows,NumberOfColumns,NumberOfLevels,DistBetweenRows,DistBetweenCols,DistBetweenLevels,retval) ) 
 
 #define IAcadPie_Highlight(This,HighlightFlag,retval)	\
-    (This)->lpVtbl -> Highlight(This,HighlightFlag,retval)
+    ( (This)->lpVtbl -> Highlight(This,HighlightFlag,retval) ) 
 
 #define IAcadPie_Copy(This,retval)	\
-    (This)->lpVtbl -> Copy(This,retval)
+    ( (This)->lpVtbl -> Copy(This,retval) ) 
 
 #define IAcadPie_Move(This,FromPoint,ToPoint,retval)	\
-    (This)->lpVtbl -> Move(This,FromPoint,ToPoint,retval)
+    ( (This)->lpVtbl -> Move(This,FromPoint,ToPoint,retval) ) 
 
 #define IAcadPie_Rotate(This,BasePoint,RotationAngle,retval)	\
-    (This)->lpVtbl -> Rotate(This,BasePoint,RotationAngle,retval)
+    ( (This)->lpVtbl -> Rotate(This,BasePoint,RotationAngle,retval) ) 
 
 #define IAcadPie_Rotate3D(This,Point1,Point2,RotationAngle,retval)	\
-    (This)->lpVtbl -> Rotate3D(This,Point1,Point2,RotationAngle,retval)
+    ( (This)->lpVtbl -> Rotate3D(This,Point1,Point2,RotationAngle,retval) ) 
 
 #define IAcadPie_Mirror(This,Point1,Point2,retval)	\
-    (This)->lpVtbl -> Mirror(This,Point1,Point2,retval)
+    ( (This)->lpVtbl -> Mirror(This,Point1,Point2,retval) ) 
 
 #define IAcadPie_Mirror3D(This,Point1,Point2,point3,retval)	\
-    (This)->lpVtbl -> Mirror3D(This,Point1,Point2,point3,retval)
+    ( (This)->lpVtbl -> Mirror3D(This,Point1,Point2,point3,retval) ) 
 
 #define IAcadPie_ScaleEntity(This,BasePoint,ScaleFactor,retval)	\
-    (This)->lpVtbl -> ScaleEntity(This,BasePoint,ScaleFactor,retval)
+    ( (This)->lpVtbl -> ScaleEntity(This,BasePoint,ScaleFactor,retval) ) 
 
 #define IAcadPie_TransformBy(This,TransformationMatrix,retval)	\
-    (This)->lpVtbl -> TransformBy(This,TransformationMatrix,retval)
+    ( (This)->lpVtbl -> TransformBy(This,TransformationMatrix,retval) ) 
 
 #define IAcadPie_Update(This,retval)	\
-    (This)->lpVtbl -> Update(This,retval)
+    ( (This)->lpVtbl -> Update(This,retval) ) 
 
 #define IAcadPie_GetBoundingBox(This,MinPoint,MaxPoint,retval)	\
-    (This)->lpVtbl -> GetBoundingBox(This,MinPoint,MaxPoint,retval)
+    ( (This)->lpVtbl -> GetBoundingBox(This,MinPoint,MaxPoint,retval) ) 
 
 #define IAcadPie_IntersectWith(This,IntersectObject,option,retval)	\
-    (This)->lpVtbl -> IntersectWith(This,IntersectObject,option,retval)
+    ( (This)->lpVtbl -> IntersectWith(This,IntersectObject,option,retval) ) 
 
 #define IAcadPie_get_PlotStyleName(This,retval)	\
-    (This)->lpVtbl -> get_PlotStyleName(This,retval)
+    ( (This)->lpVtbl -> get_PlotStyleName(This,retval) ) 
 
 #define IAcadPie_put_PlotStyleName(This,noname,retval)	\
-    (This)->lpVtbl -> put_PlotStyleName(This,noname,retval)
+    ( (This)->lpVtbl -> put_PlotStyleName(This,noname,retval) ) 
 
 #define IAcadPie_get_Lineweight(This,retval)	\
-    (This)->lpVtbl -> get_Lineweight(This,retval)
+    ( (This)->lpVtbl -> get_Lineweight(This,retval) ) 
 
 #define IAcadPie_put_Lineweight(This,noname,retval)	\
-    (This)->lpVtbl -> put_Lineweight(This,noname,retval)
+    ( (This)->lpVtbl -> put_Lineweight(This,noname,retval) ) 
+
+#define IAcadPie_get_EntityTransparency(This,retval)	\
+    ( (This)->lpVtbl -> get_EntityTransparency(This,retval) ) 
+
+#define IAcadPie_put_EntityTransparency(This,noname,retval)	\
+    ( (This)->lpVtbl -> put_EntityTransparency(This,noname,retval) ) 
 
 #define IAcadPie_get_Hyperlinks(This,retval)	\
-    (This)->lpVtbl -> get_Hyperlinks(This,retval)
+    ( (This)->lpVtbl -> get_Hyperlinks(This,retval) ) 
+
+#define IAcadPie_get_Material(This,retval)	\
+    ( (This)->lpVtbl -> get_Material(This,retval) ) 
+
+#define IAcadPie_put_Material(This,noname,retval)	\
+    ( (This)->lpVtbl -> put_Material(This,noname,retval) ) 
 
 #define IAcadPie_get_EntityName(This,retval)	\
-    (This)->lpVtbl -> get_EntityName(This,retval)
+    ( (This)->lpVtbl -> get_EntityName(This,retval) ) 
 
 #define IAcadPie_get_EntityType(This,retval)	\
-    (This)->lpVtbl -> get_EntityType(This,retval)
+    ( (This)->lpVtbl -> get_EntityType(This,retval) ) 
 
 #define IAcadPie_get_color(This,retval)	\
-    (This)->lpVtbl -> get_color(This,retval)
+    ( (This)->lpVtbl -> get_color(This,retval) ) 
 
 #define IAcadPie_put_color(This,noname,retval)	\
-    (This)->lpVtbl -> put_color(This,noname,retval)
+    ( (This)->lpVtbl -> put_color(This,noname,retval) ) 
 
 #define IAcadPie_get_Center(This,retval)	\
-    (This)->lpVtbl -> get_Center(This,retval)
+    ( (This)->lpVtbl -> get_Center(This,retval) ) 
 
 #define IAcadPie_put_Center(This,noname,retval)	\
-    (This)->lpVtbl -> put_Center(This,noname,retval)
+    ( (This)->lpVtbl -> put_Center(This,noname,retval) ) 
 
 #define IAcadPie_get_Radius(This,retval)	\
-    (This)->lpVtbl -> get_Radius(This,retval)
+    ( (This)->lpVtbl -> get_Radius(This,retval) ) 
 
 #define IAcadPie_put_Radius(This,noname,retval)	\
-    (This)->lpVtbl -> put_Radius(This,noname,retval)
+    ( (This)->lpVtbl -> put_Radius(This,noname,retval) ) 
 
 #define IAcadPie_get_Diameter(This,retval)	\
-    (This)->lpVtbl -> get_Diameter(This,retval)
+    ( (This)->lpVtbl -> get_Diameter(This,retval) ) 
 
 #define IAcadPie_put_Diameter(This,noname,retval)	\
-    (This)->lpVtbl -> put_Diameter(This,noname,retval)
+    ( (This)->lpVtbl -> put_Diameter(This,noname,retval) ) 
 
 #define IAcadPie_get_Circumference(This,retval)	\
-    (This)->lpVtbl -> get_Circumference(This,retval)
+    ( (This)->lpVtbl -> get_Circumference(This,retval) ) 
 
 #define IAcadPie_put_Circumference(This,noname,retval)	\
-    (This)->lpVtbl -> put_Circumference(This,noname,retval)
+    ( (This)->lpVtbl -> put_Circumference(This,noname,retval) ) 
 
 #define IAcadPie_get_Area(This,retval)	\
-    (This)->lpVtbl -> get_Area(This,retval)
+    ( (This)->lpVtbl -> get_Area(This,retval) ) 
 
 #define IAcadPie_put_Area(This,noname,retval)	\
-    (This)->lpVtbl -> put_Area(This,noname,retval)
+    ( (This)->lpVtbl -> put_Area(This,noname,retval) ) 
 
 #define IAcadPie_get_Normal(This,retval)	\
-    (This)->lpVtbl -> get_Normal(This,retval)
+    ( (This)->lpVtbl -> get_Normal(This,retval) ) 
 
 #define IAcadPie_put_Normal(This,noname,retval)	\
-    (This)->lpVtbl -> put_Normal(This,noname,retval)
+    ( (This)->lpVtbl -> put_Normal(This,noname,retval) ) 
 
 #define IAcadPie_get_Thickness(This,retval)	\
-    (This)->lpVtbl -> get_Thickness(This,retval)
+    ( (This)->lpVtbl -> get_Thickness(This,retval) ) 
 
 #define IAcadPie_put_Thickness(This,noname,retval)	\
-    (This)->lpVtbl -> put_Thickness(This,noname,retval)
+    ( (This)->lpVtbl -> put_Thickness(This,noname,retval) ) 
 
 #define IAcadPie_Offset(This,Distance,retval)	\
-    (This)->lpVtbl -> Offset(This,Distance,retval)
+    ( (This)->lpVtbl -> Offset(This,Distance,retval) ) 
 
 
 #define IAcadPie_get_Title(This,pVal)	\
-    (This)->lpVtbl -> get_Title(This,pVal)
+    ( (This)->lpVtbl -> get_Title(This,pVal) ) 
 
 #define IAcadPie_put_Title(This,newVal)	\
-    (This)->lpVtbl -> put_Title(This,newVal)
+    ( (This)->lpVtbl -> put_Title(This,newVal) ) 
 
 #define IAcadPie_get_AllExploded(This,pVal)	\
-    (This)->lpVtbl -> get_AllExploded(This,pVal)
+    ( (This)->lpVtbl -> get_AllExploded(This,pVal) ) 
 
 #define IAcadPie_put_AllExploded(This,newVal)	\
-    (This)->lpVtbl -> put_AllExploded(This,newVal)
+    ( (This)->lpVtbl -> put_AllExploded(This,newVal) ) 
 
 #define IAcadPie_get_Clockwise(This,pVal)	\
-    (This)->lpVtbl -> get_Clockwise(This,pVal)
+    ( (This)->lpVtbl -> get_Clockwise(This,pVal) ) 
 
 #define IAcadPie_put_Clockwise(This,newVal)	\
-    (This)->lpVtbl -> put_Clockwise(This,newVal)
+    ( (This)->lpVtbl -> put_Clockwise(This,newVal) ) 
 
 #define IAcadPie_get_Sectors(This,ppVal)	\
-    (This)->lpVtbl -> get_Sectors(This,ppVal)
+    ( (This)->lpVtbl -> get_Sectors(This,ppVal) ) 
 
 #endif /* COBJMACROS */
 
 
 #endif 	/* C style interface */
 
-
-
-/* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE IAcadPie_get_Title_Proxy( 
-    IAcadPie * This,
-    /* [retval][out] */ BSTR *pVal);
-
-
-void __RPC_STUB IAcadPie_get_Title_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id][propput] */ HRESULT STDMETHODCALLTYPE IAcadPie_put_Title_Proxy( 
-    IAcadPie * This,
-    /* [in] */ BSTR newVal);
-
-
-void __RPC_STUB IAcadPie_put_Title_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE IAcadPie_get_AllExploded_Proxy( 
-    IAcadPie * This,
-    /* [retval][out] */ VARIANT_BOOL *pVal);
-
-
-void __RPC_STUB IAcadPie_get_AllExploded_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id][propput] */ HRESULT STDMETHODCALLTYPE IAcadPie_put_AllExploded_Proxy( 
-    IAcadPie * This,
-    /* [in] */ VARIANT_BOOL newVal);
-
-
-void __RPC_STUB IAcadPie_put_AllExploded_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE IAcadPie_get_Clockwise_Proxy( 
-    IAcadPie * This,
-    /* [retval][out] */ VARIANT_BOOL *pVal);
-
-
-void __RPC_STUB IAcadPie_get_Clockwise_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id][propput] */ HRESULT STDMETHODCALLTYPE IAcadPie_put_Clockwise_Proxy( 
-    IAcadPie * This,
-    /* [in] */ VARIANT_BOOL newVal);
-
-
-void __RPC_STUB IAcadPie_put_Clockwise_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE IAcadPie_get_Sectors_Proxy( 
-    IAcadPie * This,
-    /* [retval][out] */ IAcadPieSectors **ppVal);
-
-
-void __RPC_STUB IAcadPie_get_Sectors_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
 
 
 

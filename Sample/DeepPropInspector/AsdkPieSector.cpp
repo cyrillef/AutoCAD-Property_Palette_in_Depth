@@ -66,7 +66,7 @@ Acad::ErrorStatus AsdkPieSector::dwgOutFields (AcDbDwgFiler *pFiler) const {
 	//----- Object version number needs to be saved first
 	eOkReturn( pFiler->writeUInt32 (AsdkPieSector::kCurrentVersionNumber) ) ;
 
-	pFiler->writeString ((LPCTSTR)mTitle) ;
+	pFiler->writeString ((LPCWSTR)mTitle) ;
 	pFiler->writeHardPointerId (mTitleTextStyleId) ;
 	pFiler->writeDouble (mTitleTextSize) ;
 	pFiler->writePoint2d (mTitlePosition) ;
@@ -75,7 +75,7 @@ Acad::ErrorStatus AsdkPieSector::dwgOutFields (AcDbDwgFiler *pFiler) const {
 	pFiler->writeBool (mbExploded) ;
 	pFiler->writeBool (mbVisible) ;
 	pFiler->writeInt32 (mPatternType) ;
-	pFiler->writeString ((LPCTSTR)mPatternName) ;
+	pFiler->writeString ((LPCWSTR)mPatternName) ;
 	pFiler->writeDouble (mScale) ;
 	pFiler->writeDouble (mAngle) ;
 	pFiler->writeUInt32 (mColor.color ()) ;
@@ -95,7 +95,7 @@ Acad::ErrorStatus AsdkPieSector::dwgInFields (AcDbDwgFiler *pFiler) {
 	//if ( version < AsdkMyArc::kCurrentVersionNumber )
 	//	return (Acad::eMakeMeProxy) ;
 
-	char *pSt =NULL ; pFiler->readString (&pSt) ; mTitle =pSt ; delete [] pSt ; //acdbFree (pSt) ;
+	ACHAR *pSt =NULL ; pFiler->readString (&pSt) ; mTitle =pSt ; delete [] pSt ; //acdbFree (pSt) ;
 	pFiler->readHardPointerId (&mTitleTextStyleId) ;
 	pFiler->readDouble (&mTitleTextSize) ;
 	pFiler->readPoint2d (&mTitlePosition) ;
