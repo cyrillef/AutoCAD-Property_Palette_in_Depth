@@ -139,7 +139,7 @@ STDMETHODIMP CPieSectorImage::GetCustomPropertyCtrl (VARIANT varId, LCID lcid, B
 		PER_PROP_DISP_ENTRY *pPerPropDispEntry =(PER_PROP_DISP_ENTRY*)(&(*(arr.begin ()))) ;
 		if ( pPerPropDispEntry == NULL )
 			throw "" ;
-		*pProgId =::SysAllocString (A2OLE(pPerPropDispEntry->m_ProgID)) ;
+		*pProgId =::SysAllocString (pPerPropDispEntry->m_ProgID) ;
 	} catch (...) {
 		return (IAcPiPropertyDisplayImpl<CPieSectorImage>::GetCustomPropertyCtrl (varId, lcid, pProgId)) ;
 	}

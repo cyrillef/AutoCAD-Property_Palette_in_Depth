@@ -70,61 +70,61 @@ public:
 	virtual void subSetDatabaseDefaults (AcDbDatabase *pDb) ;
 
 	//----- deepClone / wblockClone
-	virtual Acad::ErrorStatus deepClone (AcDbObject *pOwnerObject, AcDbObject *&pClonedObject, AcDbIdMapping &idMap, Adesk::Boolean isPrimary =true) const ;
-	virtual Acad::ErrorStatus wblockClone (AcRxObject *pOwnerObject, AcDbObject *&pClonedObject, AcDbIdMapping &idMap, Adesk::Boolean isPrimary =true) const ;
+	virtual Acad::ErrorStatus subDeepClone (AcDbObject *pOwnerObject, AcDbObject *&pClonedObject, AcDbIdMapping &idMap, Adesk::Boolean isPrimary =true) const ;
+	virtual Acad::ErrorStatus subWblockClone (AcRxObject *pOwnerObject, AcDbObject *&pClonedObject, AcDbIdMapping &idMap, Adesk::Boolean isPrimary =true) const ;
 
 	//- Automation support
-	virtual Acad::ErrorStatus getClassID (CLSID *pClsid) const ;
+	virtual Acad::ErrorStatus subGetClassID (CLSID *pClsid) const ;
 
 	//----- AcDbEntity protocols
 	//- Graphics protocol
 	void CalculateSectorsPoints () ;
 	//virtual void viewportDraw (AcGiViewportDraw *mode) ;
-	virtual Adesk::Boolean worldDraw (AcGiWorldDraw *mode) ;
+	virtual Adesk::Boolean subWorldDraw (AcGiWorldDraw *mode) ;
 
 	//- Osnap points protocol
-	virtual Acad::ErrorStatus getOsnapPoints (
+	//virtual Acad::ErrorStatus subGetOsnapPoints (
+	//	AcDb::OsnapMode osnapMode,
+	//	int gsSelectionMark,
+	//	const AcGePoint3d &pickPoint,
+	//	const AcGePoint3d &lastPoint,
+	//	const AcGeMatrix3d &viewXform,
+	//	AcGePoint3dArray &snapPoints,
+	//	AcDbIntArray &geomIds) const ;
+	virtual Acad::ErrorStatus subGetOsnapPoints (
+		AcDb::OsnapMode osnapMode,
+		int gsSelectionMark,
+		const AcGePoint3d &pickPoint,
+		const AcGePoint3d &lastPoint,
+		const AcGeMatrix3d& viewXform,
+		AcGePoint3dArray &snapPoints,
+		AcDbIntArray &geomIds) const ;
+	//virtual Acad::ErrorStatus subGetOsnapPoints (
+	//	AcDb::OsnapMode osnapMode,
+	//	int gsSelectionMark,
+	//	const AcGePoint3d &pickPoint,
+	//	const AcGePoint3d &lastPoint,
+	//	const AcGeMatrix3d &viewXform,
+	//	AcGePoint3dArray &snapPoints,
+	//	AcDbIntArray &geomIds,
+	//	const AcGeMatrix3d &insertionMat) const ;
+	virtual Acad::ErrorStatus subGetOsnapPoints (
 		AcDb::OsnapMode osnapMode,
 		int gsSelectionMark,
 		const AcGePoint3d &pickPoint,
 		const AcGePoint3d &lastPoint,
 		const AcGeMatrix3d &viewXform,
-		AcGePoint3dArray &snapPoints,
-		AcDbIntArray &geomIds) const ;
-	virtual Acad::ErrorStatus getOsnapPoints (
-		AcDb::OsnapMode osnapMode,
-		int gsSelectionMark,
-		const AcGePoint3d &pickPoint,
-		const AcGePoint3d &lastPoint,
-		const AcGeFastTransform &viewXform,
-		AcGePoint3dArray &snapPoints,
-		AcDbIntArray &geomIds) const ;
-	virtual Acad::ErrorStatus getOsnapPoints (
-		AcDb::OsnapMode osnapMode,
-		int gsSelectionMark,
-		const AcGePoint3d &pickPoint,
-		const AcGePoint3d &lastPoint,
-		const AcGeMatrix3d &viewXform,
-		AcGePoint3dArray &snapPoints,
-		AcDbIntArray &geomIds,
-		const AcGeMatrix3d &insertionMat) const ;
-	virtual Acad::ErrorStatus getOsnapPoints (
-		AcDb::OsnapMode osnapMode,
-		int gsSelectionMark,
-		const AcGePoint3d &pickPoint,
-		const AcGePoint3d &lastPoint,
-		const AcGeFastTransform &viewXform,
 		AcGePoint3dArray &snapPoints,
 		AcDbIntArray &geomIds,
 		const AcGeMatrix3d &insertionMat) const ;
 
 	//- Grip points protocol
-	virtual Acad::ErrorStatus getGripPoints (AcGePoint3dArray &gripPoints, AcDbIntArray &osnapModes, AcDbIntArray &geomIds) const ;
-	virtual Acad::ErrorStatus moveGripPointsAt (const AcDbIntArray &indices, const AcGeVector3d &offset) ;
-	virtual Acad::ErrorStatus getGripPoints (
+	virtual Acad::ErrorStatus subGetGripPoints (AcGePoint3dArray &gripPoints, AcDbIntArray &osnapModes, AcDbIntArray &geomIds) const ;
+	virtual Acad::ErrorStatus subMoveGripPointsAt (const AcDbIntArray &indices, const AcGeVector3d &offset) ;
+	virtual Acad::ErrorStatus subGetGripPoints (
 		AcDbGripDataPtrArray &grips, const double curViewUnitSize, const int gripSize, 
 		const AcGeVector3d &curViewDir, const int bitflags) const ;
-	virtual Acad::ErrorStatus moveGripPointsAt (const AcDbVoidPtrArray &gripAppData, const AcGeVector3d &offset, const int bitflags) ;
+	virtual Acad::ErrorStatus subMoveGripPointsAt (const AcDbVoidPtrArray &gripAppData, const AcGeVector3d &offset, const int bitflags) ;
 
 	//- Data access
 	AsdkPieSector *AppendData (

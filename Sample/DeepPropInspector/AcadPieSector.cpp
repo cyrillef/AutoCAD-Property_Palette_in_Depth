@@ -105,7 +105,7 @@ STDMETHODIMP CAcadPieSector::get_TrueColor (IAcadAcCmColor **ppColor) {
 	AcCmEntityColor color =mpSector->get_Color () ;
 	CComPtr<IAcadAcCmColor> pColor ;
 	pColor.CoCreateInstance (CLSID_AcadAcCmColor, NULL, CLSCTX_ALL) ;
-	pColor->put_EntityColor (static_cast<long>(color.color ())) ;
+	pColor->put_EntityColor (static_cast<long>(color.getRGBM())) ;
 	(*ppColor) =pColor.Detach () ;
 	END_PROP_GETPUT(IID_IAcadPieSector) ;
 	return (S_OK) ;
@@ -116,7 +116,7 @@ STDMETHODIMP CAcadPieSector::put_TrueColor (IAcadAcCmColor *pColor) {
 	long lColor =0 ;
 	pColor->get_EntityColor (&lColor) ;
 	AcCmEntityColor color ;
-	color.setColor (static_cast<const Adesk::UInt32>(lColor)) ;
+	color.setRGBM(static_cast<const Adesk::UInt32>(lColor)) ;
 	mpSector->put_Color (color) ;
 	END_PROP_GETPUT(IID_IAcadPieSector) ;
 	return (S_OK) ;

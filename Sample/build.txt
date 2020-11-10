@@ -1,0 +1,198 @@
+Microsoft (R) Build Engine version 16.7.0+b89cb5fde for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Building the projects in this solution one at a time. To enable parallel build, please add the "-m" switch.
+Build started 11/10/2020 7:04:07 PM.
+Project "D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\DeepPropInspector.sln" on node 1 (Build target(s)).
+ValidateSolutionConfiguration:
+  Building solution configuration "Debug2021|x64".
+Project "D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\DeepPropInspector.sln" (1) is building "D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\DeepPropInspector\DeepPropInspector.vcxproj" (2) on node 1 (default targets).
+InitializeBuildStatus:
+  Creating "x64\Debug2021\DeepProp.7EBD30DB.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+Midl:
+  C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x86\midl.exe /D _DEBUG /W1 /nologo /char signed /env x64 /Oicf /h "DeepPropInspector.h" /iid "DeepPropInspector_i.c" /proxy "DeepPropInspector_p.c" /tlb "D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\x64\Debug2021\AsdkDeepPropInspector.tlb" /target "NT60" DeepPropInspector.idl 
+  64 bit Processing .\DeepPropInspector.idl
+  DeepPropInspector.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\oaidl.idl
+  oaidl.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\objidl.idl
+  objidl.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\unknwn.idl
+  unknwn.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\wtypes.idl
+  wtypes.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\wtypesbase.idl
+  wtypesbase.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\basetsd.h
+  basetsd.h
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\guiddef.h
+  guiddef.h
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\ocidl.idl
+  ocidl.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\oleidl.idl
+  oleidl.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\servprov.idl
+  servprov.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\urlmon.idl
+  urlmon.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\msxml.idl
+  msxml.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\oaidl.acf
+  oaidl.acf
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\ocidl.acf
+  ocidl.acf
+VcpkgTripletSelection:
+  Not using Vcpkg because VcpkgEnabled is "false"
+ClCompile:
+  C:\VS2019\VC\Tools\MSVC\14.27.29110\bin\HostX86\x64\CL.exe /c /ID:\Work\ObjectARX2021\inc /I"D:\Work\ObjectARX2021\inc-x64" /Zi /nologo /W1 /WX- /diagnostics:column /Od /D _WINDOWS /D _DEBUG /D DEEPPROPINSPECTOR_MODULE /D _DBXAPP /D _WINDLL /D _UNICODE /D UNICODE /GF- /Gm- /EHsc /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"x64\Debug2021\\" /Fd"x64\Debug2021\vc142.pdb" /Gd /TP /FC /errorReport:queue acrxEntryPoint.cpp DeepPropInspector.cpp StdAfx.cpp DrawUtils.cpp RxTrace.cpp AcadPieSectors.cpp AcadPieSectorsEnum.cpp AcadPieSector.cpp AsdkPieSector.cpp AcadPie.cpp AsdkPie.cpp
+  acrxEntryPoint.cpp
+       Compiling MFC / STL / ATL header files in release mode.
+  DeepPropInspector.cpp
+       Compiling MFC / STL / ATL header files in release mode.
+  StdAfx.cpp
+       Compiling MFC / STL / ATL header files in release mode.
+  DrawUtils.cpp
+       Compiling MFC / STL / ATL header files in release mode.
+  RxTrace.cpp
+       Compiling MFC / STL / ATL header files in release mode.
+  AcadPieSectors.cpp
+       Compiling MFC / STL / ATL header files in release mode.
+  AcadPieSectorsEnum.cpp
+       Compiling MFC / STL / ATL header files in release mode.
+  AcadPieSector.cpp
+       Compiling MFC / STL / ATL header files in release mode.
+  AsdkPieSector.cpp
+       Compiling MFC / STL / ATL header files in release mode.
+  AcadPie.cpp
+       Compiling MFC / STL / ATL header files in release mode.
+  AsdkPie.cpp
+       Compiling MFC / STL / ATL header files in release mode.
+  Generating Code...
+ResourceCompile:
+  C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x86\rc.exe /D _DEBUG /D _UNICODE /D UNICODE /l"0x0409" /Ix64\Debug2021\ /I"D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\x64\Debug2021\\" /nologo /fo"x64\Debug2021\DeepPropInspector.res" DeepPropInspector.rc 
+Link:
+  C:\VS2019\VC\Tools\MSVC\14.27.29110\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\x64\Debug2021\DeepPropInspector.dbx" /INCREMENTAL /NOLOGO /LIBPATH:"D:\Work\ObjectARX2021\lib-x64" ac1st24.lib acad.lib acapp.lib acapp_crx.lib AcCamera.lib accore.lib acdb24.lib acdbmgd.lib AcDbPointCloudObj.lib AcDrawBridge.lib AcFdEval.lib AcFdUi.lib acge24.lib AcGeolocationObj.lib acgeoment.lib acgiapi.lib acismobj24.lib AcJsCoreStub_crx.lib acModelDocObj.lib AcMPolygonObj.lib AcPal.lib AcPublish_crx.lib AcSceneOE.lib AcTc.lib AcTcUi.lib acui24.lib AdApplicationFrame.lib adui24.lib aNav.lib axdb.lib rxapi.lib userdata.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:"DeepPropInspector.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\x64\Debug2021\DeepPropInspector.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\x64\Debug2021\DeepPropInspector.lib" /MACHINE:X64 /DLL x64\Debug2021\DeepPropInspector.res
+  x64\Debug2021\acrxEntryPoint.obj
+  x64\Debug2021\DeepPropInspector.obj
+  x64\Debug2021\StdAfx.obj
+  x64\Debug2021\DrawUtils.obj
+  x64\Debug2021\RxTrace.obj
+  x64\Debug2021\AcadPieSectors.obj
+  x64\Debug2021\AcadPieSectorsEnum.obj
+  x64\Debug2021\AcadPieSector.obj
+  x64\Debug2021\AsdkPieSector.obj
+  x64\Debug2021\AcadPie.obj
+  x64\Debug2021\AsdkPie.obj
+     Creating library D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\x64\Debug2021\DeepPropInspector.lib and object D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\x64\Debug2021\DeepPropInspector.exp
+rxapi.lib(libinit.obj) : warning LNK4099: PDB 'rxapi.pdb' was not found with 'rxapi.lib(libinit.obj)' or at 'D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\x64\Debug2021\rxapi.pdb'; linking object as if no debug info [D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\DeepPropInspector\DeepPropInspector.vcxproj]
+  DeepPropInspector.vcxproj -> D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\x64\Debug2021\DeepPropInspector.dbx
+FinalizeBuildStatus:
+  Deleting file "x64\Debug2021\DeepProp.7EBD30DB.tlog\unsuccessfulbuild".
+  Touching "x64\Debug2021\DeepProp.7EBD30DB.tlog\DeepPropInspector.lastbuildstate".
+Done Building Project "D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\DeepPropInspector\DeepPropInspector.vcxproj" (default targets).
+Project "D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\DeepPropInspector.sln" (1) is building "D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\DeepPropInspectorUI\DeepPropInspectorUI.vcxproj" (3) on node 1 (default targets).
+InitializeBuildStatus:
+  Creating "x64\Debug2021\DeepProp.4B36304D.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+Midl:
+  C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x86\midl.exe /D _DEBUG /W1 /nologo /char signed /env x64 /Oicf /h "DeepPropInspectorUI.h" /iid "DeepPropInspectorUI_i.c" /proxy "DeepPropInspectorUI_p.c" /tlb "D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\x64\Debug2021\AsdkDeepPropInspectorUI.tlb" /target "NT60" DeepPropInspectorUI.idl 
+  64 bit Processing .\DeepPropInspectorUI.idl
+  DeepPropInspectorUI.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\oaidl.idl
+  oaidl.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\objidl.idl
+  objidl.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\unknwn.idl
+  unknwn.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\wtypes.idl
+  wtypes.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\wtypesbase.idl
+  wtypesbase.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\basetsd.h
+  basetsd.h
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\guiddef.h
+  guiddef.h
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\ocidl.idl
+  ocidl.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\oleidl.idl
+  oleidl.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\servprov.idl
+  servprov.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\urlmon.idl
+  urlmon.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\msxml.idl
+  msxml.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\oaidl.acf
+  oaidl.acf
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\ocidl.acf
+  ocidl.acf
+VcpkgTripletSelection:
+  Not using Vcpkg because VcpkgEnabled is "false"
+ClCompile:
+  C:\VS2019\VC\Tools\MSVC\14.27.29110\bin\HostX86\x64\CL.exe /c /ID:\Work\ObjectARX2021\inc /I"D:\Work\ObjectARX2021\inc-x64" /AI"C:\Qubit\AutoCAD 2020" /Zi /nologo /W1 /WX- /diagnostics:column /Od /D WIN32 /D _WINDOWS /D _DEBUG /D DEEPPROPINSPECTORUI_MODULE /D _AFXEXT /D _ACRXAPP /D _WINDLL /D _UNICODE /D UNICODE /D _AFXDLL /GF- /Gm- /EHsc /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"x64\Debug2021\\" /Fd"x64\Debug2021\vc142.pdb" /Gd /TP /FC /errorReport:queue acrxEntryPoint.cpp DeepPropInspectorUI.cpp DocData.cpp StdAfx.cpp RxTrace.cpp AsdkSpinner.cpp PieSectorsCount.cpp PieSectorsSpin.cpp PieSectorExploded.cpp PieSectorImage.cpp PieSectorColor.cpp AsdkPieJig.cpp
+  acrxEntryPoint.cpp
+       Compiling MFC / STL / ATL header files in release mode.
+  DeepPropInspectorUI.cpp
+       Compiling MFC / STL / ATL header files in release mode.
+  DocData.cpp
+       Compiling MFC / STL / ATL header files in release mode.
+  StdAfx.cpp
+       Compiling MFC / STL / ATL header files in release mode.
+  RxTrace.cpp
+       Compiling MFC / STL / ATL header files in release mode.
+  AsdkSpinner.cpp
+       Compiling MFC / STL / ATL header files in release mode.
+  PieSectorsCount.cpp
+       Compiling MFC / STL / ATL header files in release mode.
+  PieSectorsSpin.cpp
+       Compiling MFC / STL / ATL header files in release mode.
+  PieSectorExploded.cpp
+       Compiling MFC / STL / ATL header files in release mode.
+  PieSectorImage.cpp
+       Compiling MFC / STL / ATL header files in release mode.
+  PieSectorColor.cpp
+       Compiling MFC / STL / ATL header files in release mode.
+  AsdkPieJig.cpp
+       Compiling MFC / STL / ATL header files in release mode.
+  Generating Code...
+ResourceCompile:
+  C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x86\rc.exe /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /l"0x0409" /Ix64\Debug2021\ /I"D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\x64\Debug2021\\" /nologo /fo"x64\Debug2021\DeepPropInspectorUI.res" DeepPropInspectorUI.rc 
+Link:
+  C:\VS2019\VC\Tools\MSVC\14.27.29110\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\x64\Debug2021\DeepPropInspectorUI.arx" /INCREMENTAL /NOLOGO /LIBPATH:"D:\Work\ObjectARX2021\lib-x64" ac1st24.lib acad.lib acapp.lib acapp_crx.lib AcCamera.lib accore.lib acdb24.lib acdbmgd.lib AcDbPointCloudObj.lib AcDrawBridge.lib AcFdEval.lib AcFdUi.lib acge24.lib AcGeolocationObj.lib acgeoment.lib acgiapi.lib acismobj24.lib AcJsCoreStub_crx.lib acModelDocObj.lib AcMPolygonObj.lib AcPal.lib AcPublish_crx.lib AcSceneOE.lib AcTc.lib AcTcUi.lib acui24.lib AdApplicationFrame.lib adui24.lib aNav.lib axdb.lib rxapi.lib userdata.lib /DEF:"DeepPropInspectorUI.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:C:\VS2019\VC\Tools\MSVC\14.27.29110\Include\Manifest\dpiaware.manifest /DEBUG /PDB:"D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\x64\Debug2021\DeepPropInspectorUI.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\x64\Debug2021\DeepPropInspectorUI.lib" /MACHINE:X64 /DLL x64\Debug2021\DeepPropInspectorUI.res
+  x64\Debug2021\acrxEntryPoint.obj
+  x64\Debug2021\DeepPropInspectorUI.obj
+  x64\Debug2021\DocData.obj
+  x64\Debug2021\StdAfx.obj
+  x64\Debug2021\RxTrace.obj
+  x64\Debug2021\AsdkSpinner.obj
+  x64\Debug2021\PieSectorsCount.obj
+  x64\Debug2021\PieSectorsSpin.obj
+  x64\Debug2021\PieSectorExploded.obj
+  x64\Debug2021\PieSectorImage.obj
+  x64\Debug2021\PieSectorColor.obj
+  x64\Debug2021\AsdkPieJig.obj
+  "D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\x64\Debug2021\DeepPropInspector.lib"
+     Creating library D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\x64\Debug2021\DeepPropInspectorUI.lib and object D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\x64\Debug2021\DeepPropInspectorUI.exp
+rxapi.lib(libinit.obj) : warning LNK4099: PDB 'rxapi.pdb' was not found with 'rxapi.lib(libinit.obj)' or at 'D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\x64\Debug2021\rxapi.pdb'; linking object as if no debug info [D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\DeepPropInspectorUI\DeepPropInspectorUI.vcxproj]
+  DeepPropInspectorUI.vcxproj -> D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\x64\Debug2021\DeepPropInspectorUI.arx
+FinalizeBuildStatus:
+  Deleting file "x64\Debug2021\DeepProp.4B36304D.tlog\unsuccessfulbuild".
+  Touching "x64\Debug2021\DeepProp.4B36304D.tlog\DeepPropInspectorUI.lastbuildstate".
+Done Building Project "D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\DeepPropInspectorUI\DeepPropInspectorUI.vcxproj" (default targets).
+Done Building Project "D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\DeepPropInspector.sln" (Build target(s)).
+
+Build succeeded.
+
+"D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\DeepPropInspector.sln" (Build target) (1) ->
+"D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\DeepPropInspector\DeepPropInspector.vcxproj" (default target) (2) ->
+(Link target) -> 
+  rxapi.lib(libinit.obj) : warning LNK4099: PDB 'rxapi.pdb' was not found with 'rxapi.lib(libinit.obj)' or at 'D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\x64\Debug2021\rxapi.pdb'; linking object as if no debug info [D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\DeepPropInspector\DeepPropInspector.vcxproj]
+
+
+"D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\DeepPropInspector.sln" (Build target) (1) ->
+"D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\DeepPropInspectorUI\DeepPropInspectorUI.vcxproj" (default target) (3) ->
+  rxapi.lib(libinit.obj) : warning LNK4099: PDB 'rxapi.pdb' was not found with 'rxapi.lib(libinit.obj)' or at 'D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\x64\Debug2021\rxapi.pdb'; linking object as if no debug info [D:\Work\gitWorkouts\AutoCAD-Property_Palette_in_Depth\Sample\DeepPropInspectorUI\DeepPropInspectorUI.vcxproj]
+
+    2 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:01:03.53

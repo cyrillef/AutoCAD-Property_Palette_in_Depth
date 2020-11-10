@@ -39,7 +39,11 @@ extern "C" void _stdcall OutputDebugStringW (const unsigned short *lpOutputStrin
 #endif // _WINBASE
 
 //-----------------------------------------------------------------------------
+#ifndef _countof
 #define _countof(array) (sizeof(array)/sizeof(array[0]))
+#endif // !_countof
+
+
 
 void RxTrace (const TCHAR *lpszFormat, ...) {
 	va_list args ;

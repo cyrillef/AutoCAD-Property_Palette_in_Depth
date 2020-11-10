@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <arxsdk>D:\Work\ObjectARX2021</arxsdk>
+    <acaddir>C:\rogue\AutoCAD 2021</acaddir>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(arxsdk)\inc;$(arxsdk)\inc-x64</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(arxsdk)\lib-x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>$(arxsdk)\inc\AcRxDefault.def</ModuleDefinitionFile>
+      <AdditionalDependencies>ac1st24.lib;acad.lib;acapp.lib;acapp_crx.lib;AcCamera.lib;accore.lib;acdb24.lib;acdbmgd.lib;AcDbPointCloudObj.lib;AcDrawBridge.lib;AcFdEval.lib;AcFdUi.lib;acge24.lib;AcGeolocationObj.lib;acgeoment.lib;acgiapi.lib;acismobj24.lib;AcJsCoreStub_crx.lib;acModelDocObj.lib;AcMPolygonObj.lib;AcPal.lib;AcPublish_crx.lib;AcSceneOE.lib;AcTc.lib;AcTcUi.lib;acui24.lib;AdApplicationFrame.lib;adui24.lib;aNav.lib;axdb.lib;rxapi.lib;userdata.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="arxsdk">
+      <Value>$(arxsdk)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="acaddir">
+      <Value>$(acaddir)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

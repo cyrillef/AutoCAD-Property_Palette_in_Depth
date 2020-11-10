@@ -29,7 +29,7 @@ library AsdkDeepPropInspectorLib
 	//----- axdb16enu.tlb is guaranteed to be available in all locales.
 	//----- If you want to provide localized typelib then you must import
 	//----- localized tlb here.
-	importlib("axdb16enu.tlb");
+	importlib("axdb24enu.tlb");
 
 //- IAcadPieSector
 	[

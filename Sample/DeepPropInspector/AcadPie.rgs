@@ -34,7 +34,7 @@ HKLM
 		{
 			NoRemove ObjectDBX
 			{
-				NoRemove R16.0
+				NoRemove R24.0
 				{
 					NoRemove ActiveXCLSID
 					{

@@ -3,25 +3,24 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 6.00.0361 */
-/* at Fri Sep 24 09:10:08 2004
+ /* File created by MIDL compiler version 8.01.0622 */
+/* at Tue Jan 19 08:44:07 2038
  */
-/* Compiler settings for .\DeepPropInspectorUI.idl:
-    Oicf, W1, Zp8, env=Win32 (32b run)
-    protocol : dce , ms_ext, c_ext, robust
+/* Compiler settings for DeepPropInspectorUI.idl:
+    Oicf, W1, Zp8, env=Win64 (32b run), target_arch=AMD64 8.01.0622 
+    protocol : all , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
     VC __declspec() decoration level: 
          __declspec(uuid()), __declspec(selectany), __declspec(novtable)
          DECLSPEC_UUID(), MIDL_INTERFACE()
 */
-//@@MIDL_FILE_HEADING(  )
+/* @@MIDL_FILE_HEADING(  ) */
 
-#pragma warning( disable: 4049 )  /* more than 64k source lines */
 
 
 /* verify that the <rpcndr.h> version is high enough to compile this file*/
 #ifndef __REQUIRED_RPCNDR_H_VERSION__
-#define __REQUIRED_RPCNDR_H_VERSION__ 475
+#define __REQUIRED_RPCNDR_H_VERSION__ 500
 #endif
 
 #include "rpc.h"
@@ -29,7 +28,7 @@
 
 #ifndef __RPCNDR_H_VERSION__
 #error this stub requires an updated version of <rpcndr.h>
-#endif // __RPCNDR_H_VERSION__
+#endif /* __RPCNDR_H_VERSION__ */
 
 
 #ifndef __DeepPropInspectorUI_h__
@@ -44,12 +43,14 @@
 #ifndef __IAsdkSpinner_FWD_DEFINED__
 #define __IAsdkSpinner_FWD_DEFINED__
 typedef interface IAsdkSpinner IAsdkSpinner;
+
 #endif 	/* __IAsdkSpinner_FWD_DEFINED__ */
 
 
 #ifndef ___IAsdkSpinnerEvents_FWD_DEFINED__
 #define ___IAsdkSpinnerEvents_FWD_DEFINED__
 typedef interface _IAsdkSpinnerEvents _IAsdkSpinnerEvents;
+
 #endif 	/* ___IAsdkSpinnerEvents_FWD_DEFINED__ */
 
 
@@ -68,6 +69,7 @@ typedef struct AsdkSpinner AsdkSpinner;
 #ifndef __IPieSectorsCount_FWD_DEFINED__
 #define __IPieSectorsCount_FWD_DEFINED__
 typedef interface IPieSectorsCount IPieSectorsCount;
+
 #endif 	/* __IPieSectorsCount_FWD_DEFINED__ */
 
 
@@ -86,6 +88,7 @@ typedef struct PieSectorsCount PieSectorsCount;
 #ifndef __IPieSectorsSpin_FWD_DEFINED__
 #define __IPieSectorsSpin_FWD_DEFINED__
 typedef interface IPieSectorsSpin IPieSectorsSpin;
+
 #endif 	/* __IPieSectorsSpin_FWD_DEFINED__ */
 
 
@@ -104,6 +107,7 @@ typedef struct PieSectorsSpin PieSectorsSpin;
 #ifndef __IPieSectorExploded_FWD_DEFINED__
 #define __IPieSectorExploded_FWD_DEFINED__
 typedef interface IPieSectorExploded IPieSectorExploded;
+
 #endif 	/* __IPieSectorExploded_FWD_DEFINED__ */
 
 
@@ -122,6 +126,7 @@ typedef struct PieSectorExploded PieSectorExploded;
 #ifndef __IPieSectorImage_FWD_DEFINED__
 #define __IPieSectorImage_FWD_DEFINED__
 typedef interface IPieSectorImage IPieSectorImage;
+
 #endif 	/* __IPieSectorImage_FWD_DEFINED__ */
 
 
@@ -140,6 +145,7 @@ typedef struct PieSectorImage PieSectorImage;
 #ifndef __IPieSectorColor_FWD_DEFINED__
 #define __IPieSectorColor_FWD_DEFINED__
 typedef interface IPieSectorColor IPieSectorColor;
+
 #endif 	/* __IPieSectorColor_FWD_DEFINED__ */
 
 
@@ -163,8 +169,6 @@ typedef struct PieSectorColor PieSectorColor;
 extern "C"{
 #endif 
 
-void * __RPC_USER MIDL_user_allocate(size_t);
-void __RPC_USER MIDL_user_free( void * ); 
 
 
 #ifndef __AsdkDeepPropInspectorUILib_LIBRARY_DEFINED__
@@ -196,6 +200,7 @@ EXTERN_C const IID IID_IAsdkSpinner;
         
     };
     
+    
 #else 	/* C style interface */
 
     typedef struct IAsdkSpinnerVtbl
@@ -205,7 +210,8 @@ EXTERN_C const IID IID_IAsdkSpinner;
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
             IAsdkSpinner * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void **ppvObject);
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             IAsdkSpinner * This);
@@ -227,20 +233,28 @@ EXTERN_C const IID IID_IAsdkSpinner;
             IAsdkSpinner * This,
             /* [in] */ REFIID riid,
             /* [size_is][in] */ LPOLESTR *rgszNames,
-            /* [in] */ UINT cNames,
+            /* [range][in] */ UINT cNames,
             /* [in] */ LCID lcid,
             /* [size_is][out] */ DISPID *rgDispId);
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
             IAsdkSpinner * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS *pDispParams,
-            /* [out] */ VARIANT *pVarResult,
-            /* [out] */ EXCEPINFO *pExcepInfo,
-            /* [out] */ UINT *puArgErr);
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
         /* [id][requestedit][bindable][propget] */ HRESULT ( STDMETHODCALLTYPE *get_HWND )( 
             IAsdkSpinner * This,
@@ -260,48 +274,36 @@ EXTERN_C const IID IID_IAsdkSpinner;
 
 
 #define IAsdkSpinner_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define IAsdkSpinner_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define IAsdkSpinner_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define IAsdkSpinner_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
 #define IAsdkSpinner_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
 #define IAsdkSpinner_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
 #define IAsdkSpinner_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
 #define IAsdkSpinner_get_HWND(This,pHWND)	\
-    (This)->lpVtbl -> get_HWND(This,pHWND)
+    ( (This)->lpVtbl -> get_HWND(This,pHWND) ) 
 
 #endif /* COBJMACROS */
 
 
 #endif 	/* C style interface */
 
-
-
-/* [id][requestedit][bindable][propget] */ HRESULT STDMETHODCALLTYPE IAsdkSpinner_get_HWND_Proxy( 
-    IAsdkSpinner * This,
-    /* [retval][out] */ LONG_PTR *pHWND);
-
-
-void __RPC_STUB IAsdkSpinner_get_HWND_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
 
 
 
@@ -333,7 +335,8 @@ EXTERN_C const IID DIID__IAsdkSpinnerEvents;
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
             _IAsdkSpinnerEvents * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void **ppvObject);
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             _IAsdkSpinnerEvents * This);
@@ -355,20 +358,28 @@ EXTERN_C const IID DIID__IAsdkSpinnerEvents;
             _IAsdkSpinnerEvents * This,
             /* [in] */ REFIID riid,
             /* [size_is][in] */ LPOLESTR *rgszNames,
-            /* [in] */ UINT cNames,
+            /* [range][in] */ UINT cNames,
             /* [in] */ LCID lcid,
             /* [size_is][out] */ DISPID *rgDispId);
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
             _IAsdkSpinnerEvents * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS *pDispParams,
-            /* [out] */ VARIANT *pVarResult,
-            /* [out] */ EXCEPINFO *pExcepInfo,
-            /* [out] */ UINT *puArgErr);
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
         END_INTERFACE
     } _IAsdkSpinnerEventsVtbl;
@@ -384,26 +395,26 @@ EXTERN_C const IID DIID__IAsdkSpinnerEvents;
 
 
 #define _IAsdkSpinnerEvents_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define _IAsdkSpinnerEvents_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define _IAsdkSpinnerEvents_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define _IAsdkSpinnerEvents_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
 #define _IAsdkSpinnerEvents_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
 #define _IAsdkSpinnerEvents_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
 #define _IAsdkSpinnerEvents_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 #endif /* COBJMACROS */
 
@@ -439,6 +450,7 @@ EXTERN_C const IID IID_IPieSectorsCount;
     public:
     };
     
+    
 #else 	/* C style interface */
 
     typedef struct IPieSectorsCountVtbl
@@ -448,7 +460,8 @@ EXTERN_C const IID IID_IPieSectorsCount;
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
             IPieSectorsCount * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void **ppvObject);
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             IPieSectorsCount * This);
@@ -470,20 +483,28 @@ EXTERN_C const IID IID_IPieSectorsCount;
             IPieSectorsCount * This,
             /* [in] */ REFIID riid,
             /* [size_is][in] */ LPOLESTR *rgszNames,
-            /* [in] */ UINT cNames,
+            /* [range][in] */ UINT cNames,
             /* [in] */ LCID lcid,
             /* [size_is][out] */ DISPID *rgDispId);
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
             IPieSectorsCount * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS *pDispParams,
-            /* [out] */ VARIANT *pVarResult,
-            /* [out] */ EXCEPINFO *pExcepInfo,
-            /* [out] */ UINT *puArgErr);
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
         END_INTERFACE
     } IPieSectorsCountVtbl;
@@ -499,26 +520,26 @@ EXTERN_C const IID IID_IPieSectorsCount;
 
 
 #define IPieSectorsCount_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define IPieSectorsCount_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define IPieSectorsCount_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define IPieSectorsCount_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
 #define IPieSectorsCount_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
 #define IPieSectorsCount_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
 #define IPieSectorsCount_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
 #endif /* COBJMACROS */
@@ -560,6 +581,7 @@ EXTERN_C const IID IID_IPieSectorsSpin;
         
     };
     
+    
 #else 	/* C style interface */
 
     typedef struct IPieSectorsSpinVtbl
@@ -569,7 +591,8 @@ EXTERN_C const IID IID_IPieSectorsSpin;
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
             IPieSectorsSpin * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void **ppvObject);
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             IPieSectorsSpin * This);
@@ -591,20 +614,28 @@ EXTERN_C const IID IID_IPieSectorsSpin;
             IPieSectorsSpin * This,
             /* [in] */ REFIID riid,
             /* [size_is][in] */ LPOLESTR *rgszNames,
-            /* [in] */ UINT cNames,
+            /* [range][in] */ UINT cNames,
             /* [in] */ LCID lcid,
             /* [size_is][out] */ DISPID *rgDispId);
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
             IPieSectorsSpin * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS *pDispParams,
-            /* [out] */ VARIANT *pVarResult,
-            /* [out] */ EXCEPINFO *pExcepInfo,
-            /* [out] */ UINT *puArgErr);
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
         /* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Counter )( 
             IPieSectorsSpin * This,
@@ -624,48 +655,36 @@ EXTERN_C const IID IID_IPieSectorsSpin;
 
 
 #define IPieSectorsSpin_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define IPieSectorsSpin_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define IPieSectorsSpin_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define IPieSectorsSpin_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
 #define IPieSectorsSpin_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
 #define IPieSectorsSpin_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
 #define IPieSectorsSpin_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
 #define IPieSectorsSpin_get_Counter(This,pVal)	\
-    (This)->lpVtbl -> get_Counter(This,pVal)
+    ( (This)->lpVtbl -> get_Counter(This,pVal) ) 
 
 #endif /* COBJMACROS */
 
 
 #endif 	/* C style interface */
 
-
-
-/* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE IPieSectorsSpin_get_Counter_Proxy( 
-    IPieSectorsSpin * This,
-    /* [retval][out] */ ULONG *pVal);
-
-
-void __RPC_STUB IPieSectorsSpin_get_Counter_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
 
 
 
@@ -697,6 +716,7 @@ EXTERN_C const IID IID_IPieSectorExploded;
     public:
     };
     
+    
 #else 	/* C style interface */
 
     typedef struct IPieSectorExplodedVtbl
@@ -706,7 +726,8 @@ EXTERN_C const IID IID_IPieSectorExploded;
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
             IPieSectorExploded * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void **ppvObject);
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             IPieSectorExploded * This);
@@ -728,20 +749,28 @@ EXTERN_C const IID IID_IPieSectorExploded;
             IPieSectorExploded * This,
             /* [in] */ REFIID riid,
             /* [size_is][in] */ LPOLESTR *rgszNames,
-            /* [in] */ UINT cNames,
+            /* [range][in] */ UINT cNames,
             /* [in] */ LCID lcid,
             /* [size_is][out] */ DISPID *rgDispId);
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
             IPieSectorExploded * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS *pDispParams,
-            /* [out] */ VARIANT *pVarResult,
-            /* [out] */ EXCEPINFO *pExcepInfo,
-            /* [out] */ UINT *puArgErr);
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
         END_INTERFACE
     } IPieSectorExplodedVtbl;
@@ -757,26 +786,26 @@ EXTERN_C const IID IID_IPieSectorExploded;
 
 
 #define IPieSectorExploded_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define IPieSectorExploded_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define IPieSectorExploded_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define IPieSectorExploded_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
 #define IPieSectorExploded_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
 #define IPieSectorExploded_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
 #define IPieSectorExploded_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
 #endif /* COBJMACROS */
@@ -815,6 +844,7 @@ EXTERN_C const IID IID_IPieSectorImage;
     public:
     };
     
+    
 #else 	/* C style interface */
 
     typedef struct IPieSectorImageVtbl
@@ -824,7 +854,8 @@ EXTERN_C const IID IID_IPieSectorImage;
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
             IPieSectorImage * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void **ppvObject);
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             IPieSectorImage * This);
@@ -846,20 +877,28 @@ EXTERN_C const IID IID_IPieSectorImage;
             IPieSectorImage * This,
             /* [in] */ REFIID riid,
             /* [size_is][in] */ LPOLESTR *rgszNames,
-            /* [in] */ UINT cNames,
+            /* [range][in] */ UINT cNames,
             /* [in] */ LCID lcid,
             /* [size_is][out] */ DISPID *rgDispId);
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
             IPieSectorImage * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS *pDispParams,
-            /* [out] */ VARIANT *pVarResult,
-            /* [out] */ EXCEPINFO *pExcepInfo,
-            /* [out] */ UINT *puArgErr);
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
         END_INTERFACE
     } IPieSectorImageVtbl;
@@ -875,26 +914,26 @@ EXTERN_C const IID IID_IPieSectorImage;
 
 
 #define IPieSectorImage_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define IPieSectorImage_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define IPieSectorImage_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define IPieSectorImage_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
 #define IPieSectorImage_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
 #define IPieSectorImage_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
 #define IPieSectorImage_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
 #endif /* COBJMACROS */
@@ -933,6 +972,7 @@ EXTERN_C const IID IID_IPieSectorColor;
     public:
     };
     
+    
 #else 	/* C style interface */
 
     typedef struct IPieSectorColorVtbl
@@ -942,7 +982,8 @@ EXTERN_C const IID IID_IPieSectorColor;
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
             IPieSectorColor * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void **ppvObject);
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             IPieSectorColor * This);
@@ -964,20 +1005,28 @@ EXTERN_C const IID IID_IPieSectorColor;
             IPieSectorColor * This,
             /* [in] */ REFIID riid,
             /* [size_is][in] */ LPOLESTR *rgszNames,
-            /* [in] */ UINT cNames,
+            /* [range][in] */ UINT cNames,
             /* [in] */ LCID lcid,
             /* [size_is][out] */ DISPID *rgDispId);
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
             IPieSectorColor * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS *pDispParams,
-            /* [out] */ VARIANT *pVarResult,
-            /* [out] */ EXCEPINFO *pExcepInfo,
-            /* [out] */ UINT *puArgErr);
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
         END_INTERFACE
     } IPieSectorColorVtbl;
@@ -993,26 +1042,26 @@ EXTERN_C const IID IID_IPieSectorColor;
 
 
 #define IPieSectorColor_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define IPieSectorColor_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define IPieSectorColor_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define IPieSectorColor_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
 #define IPieSectorColor_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
 #define IPieSectorColor_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
 #define IPieSectorColor_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
 #endif /* COBJMACROS */

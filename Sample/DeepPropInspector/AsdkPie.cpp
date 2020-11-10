@@ -102,7 +102,7 @@ Acad::ErrorStatus AsdkPie::dwgInFields (AcDbDwgFiler *pFiler) {
 	//if ( version < AsdkPie::kCurrentVersionNumber )
 	//	return (Acad::eMakeMeProxy) ;
 
-	char *pSt =NULL ; pFiler->readString (&pSt) ; mTitle =pSt ; delete [] pSt ; //acdbFree (pSt) ;
+	ACHAR*pSt =NULL ; pFiler->readString (&pSt) ; mTitle =pSt ; delete [] pSt ; //acdbFree (pSt) ;
 	pFiler->readHardPointerId (&mTitleTextStyleId) ;
 	pFiler->readDouble (&mTitleTextSize) ;
 	pFiler->readPoint2d (&mTitlePosition) ;
@@ -145,19 +145,19 @@ void AsdkPie::subSetDatabaseDefaults (AcDbDatabase *pDb) {
 }
 
 //----- deepClone
-Acad::ErrorStatus AsdkPie::deepClone (AcDbObject *pOwnerObject, AcDbObject *&pClonedObject, AcDbIdMapping &idMap, Adesk::Boolean isPrimary) const {
+Acad::ErrorStatus AsdkPie::subDeepClone (AcDbObject *pOwnerObject, AcDbObject *&pClonedObject, AcDbIdMapping &idMap, Adesk::Boolean isPrimary) const {
 	assertReadEnabled () ;
 	return (AcDbCircle::deepClone (pOwnerObject, pClonedObject, idMap, isPrimary)) ;
 }
 
 //----- wblockClone
-Acad::ErrorStatus AsdkPie::wblockClone (AcRxObject *pOwnerObject, AcDbObject *&pClonedObject, AcDbIdMapping &idMap, Adesk::Boolean isPrimary) const {
+Acad::ErrorStatus AsdkPie::subWblockClone (AcRxObject *pOwnerObject, AcDbObject *&pClonedObject, AcDbIdMapping &idMap, Adesk::Boolean isPrimary) const {
 	assertReadEnabled () ;
 	return (AcDbCircle::wblockClone (pOwnerObject, pClonedObject, idMap, isPrimary)) ;
 }
 
 //- Automation support
-Acad::ErrorStatus AsdkPie::getClassID (CLSID *pClsid) const {
+Acad::ErrorStatus AsdkPie::subGetClassID (CLSID *pClsid) const {
 	assertReadEnabled () ;
 	if ( SUCCEEDED( ::CLSIDFromProgID (L"DeepPropInspector.AcadPie.1", pClsid) ) )
 		return (Acad::eOk) ;
@@ -211,7 +211,7 @@ void AsdkPie::CalculateSectorsPoints () {
 	}
 }
 
-Adesk::Boolean AsdkPie::worldDraw (AcGiWorldDraw *mode) {
+Adesk::Boolean AsdkPie::subWorldDraw (AcGiWorldDraw *mode) {
 	assertReadEnabled () ;
 	//- In case there is no sectors. It means 100%
 	if ( mpSectors.logicalLength () == 0 ) {
@@ -233,7 +233,7 @@ Adesk::Boolean AsdkPie::worldDraw (AcGiWorldDraw *mode) {
 		DrawUtils::buildTextStyle (textStyle, mTitleTextStyleId, AcDbObjectId::kNull) ;
 		if ( mTitleTextSize != 0 )
 			textStyle.setTextSize (mTitleTextSize) ;
-		mode->geometry ().text (pt, normal (), xAxis, (LPCTSTR)mTitle, mTitle.GetLength (), Adesk::kFalse, textStyle) ;
+		mode->geometry().text (pt, normal (), xAxis, (LPCTSTR)mTitle, mTitle.GetLength (), Adesk::kFalse, textStyle) ;
 	}
 
 	return (Adesk::kTrue) ;
@@ -246,7 +246,20 @@ Adesk::Boolean AsdkPie::worldDraw (AcGiWorldDraw *mode) {
 //}
 
 //- Osnap points protocol
-Acad::ErrorStatus AsdkPie::getOsnapPoints (
+//Acad::ErrorStatus AsdkPie::subGetOsnapPoints (
+//	AcDb::OsnapMode osnapMode,
+//	int gsSelectionMark,
+//	const AcGePoint3d &pickPoint,
+//	const AcGePoint3d &lastPoint,
+//	const AcGeMatrix3d &viewXform,
+//	AcGePoint3dArray &snapPoints,
+//	AcDbIntArray &geomIds) const
+//{
+//	assertReadEnabled () ;
+//	return (AcDbCircle::getOsnapPoints (osnapMode, gsSelectionMark, pickPoint, lastPoint, viewXform, snapPoints, geomIds)) ;
+//}
+
+Acad::ErrorStatus AsdkPie::subGetOsnapPoints(
 	AcDb::OsnapMode osnapMode,
 	int gsSelectionMark,
 	const AcGePoint3d &pickPoint,
@@ -259,39 +272,26 @@ Acad::ErrorStatus AsdkPie::getOsnapPoints (
 	return (AcDbCircle::getOsnapPoints (osnapMode, gsSelectionMark, pickPoint, lastPoint, viewXform, snapPoints, geomIds)) ;
 }
 
-Acad::ErrorStatus AsdkPie::getOsnapPoints (
-	AcDb::OsnapMode osnapMode,
-	int gsSelectionMark,
-	const AcGePoint3d &pickPoint,
-	const AcGePoint3d &lastPoint,
-	const AcGeFastTransform &viewXform,
-	AcGePoint3dArray &snapPoints,
-	AcDbIntArray &geomIds) const
-{
-	assertReadEnabled () ;
-	return (AcDbCircle::getOsnapPoints (osnapMode, gsSelectionMark, pickPoint, lastPoint, viewXform, snapPoints, geomIds)) ;
-}
+//Acad::ErrorStatus AsdkPie::subGetOsnapPoints (
+//	AcDb::OsnapMode osnapMode,
+//	int gsSelectionMark,
+//	const AcGePoint3d &pickPoint,
+//	const AcGePoint3d &lastPoint,
+//	const AcGeMatrix3d &viewXform,
+//	AcGePoint3dArray &snapPoints,
+//	AcDbIntArray &geomIds,
+//	const AcGeMatrix3d &insertionMat) const
+//{
+//	assertReadEnabled () ;
+//	return (AcDbCircle::getOsnapPoints (osnapMode, gsSelectionMark, pickPoint, lastPoint, viewXform, snapPoints, geomIds, insertionMat)) ;
+//}
 
-Acad::ErrorStatus AsdkPie::getOsnapPoints (
-	AcDb::OsnapMode osnapMode,
-	int gsSelectionMark,
-	const AcGePoint3d &pickPoint,
-	const AcGePoint3d &lastPoint,
-	const AcGeMatrix3d &viewXform,
-	AcGePoint3dArray &snapPoints,
-	AcDbIntArray &geomIds,
-	const AcGeMatrix3d &insertionMat) const
-{
-	assertReadEnabled () ;
-	return (AcDbCircle::getOsnapPoints (osnapMode, gsSelectionMark, pickPoint, lastPoint, viewXform, snapPoints, geomIds, insertionMat)) ;
-}
-
-Acad::ErrorStatus AsdkPie::getOsnapPoints (
+Acad::ErrorStatus AsdkPie::subGetOsnapPoints (
 	AcDb::OsnapMode osnapMode,
 	int gsSelectionMark,
 	const AcGePoint3d & pickPoint,
 	const AcGePoint3d & lastPoint,
-	const AcGeFastTransform & viewXform,
+	const AcGeMatrix3d & viewXform,
 	AcGePoint3dArray &snapPoints,
 	AcDbIntArray &geomIds,
 	const AcGeMatrix3d &insertionMat) const
@@ -301,7 +301,7 @@ Acad::ErrorStatus AsdkPie::getOsnapPoints (
 }
 
 //- Grip points protocol
-Acad::ErrorStatus AsdkPie::getGripPoints (
+Acad::ErrorStatus AsdkPie::subGetGripPoints (
 	AcGePoint3dArray &gripPoints, AcDbIntArray &osnapModes, AcDbIntArray &geomIds
 ) const {
 	assertReadEnabled () ;
@@ -311,7 +311,7 @@ Acad::ErrorStatus AsdkPie::getGripPoints (
 	return (AcDbCircle::getGripPoints (gripPoints, osnapModes, geomIds)) ;
 }
 
-Acad::ErrorStatus AsdkPie::moveGripPointsAt (const AcDbIntArray &indices, const AcGeVector3d &offset) {
+Acad::ErrorStatus AsdkPie::subMoveGripPointsAt (const AcDbIntArray &indices, const AcGeVector3d &offset) {
 	assertWriteEnabled () ;
 	//----- This method is never called unless you return eNotImplemented 
 	//----- from the new moveGripPointsAt() method below (which is the default implementation)
@@ -319,7 +319,7 @@ Acad::ErrorStatus AsdkPie::moveGripPointsAt (const AcDbIntArray &indices, const 
 	return (AcDbCircle::moveGripPointsAt (indices, offset)) ;
 }
 
-Acad::ErrorStatus AsdkPie::getGripPoints (
+Acad::ErrorStatus AsdkPie::subGetGripPoints (
 	AcDbGripDataPtrArray &grips, const double curViewUnitSize, const int gripSize, 
 	const AcGeVector3d &curViewDir, const int bitflags
 ) const {
@@ -328,10 +328,10 @@ Acad::ErrorStatus AsdkPie::getGripPoints (
 	//----- If you return eNotImplemented here, that will force AutoCAD to call
 	//----- the older getGripPoints() implementation. The call below may return
 	//----- eNotImplemented depending of your base class.
-	return (AcDbCircle::getGripPoints (grips, curViewUnitSize, gripSize, curViewDir, bitflags)) ;
+	return (AcDbCircle::subGetGripPoints (grips, curViewUnitSize, gripSize, curViewDir, bitflags)) ;
 }
 
-Acad::ErrorStatus AsdkPie::moveGripPointsAt (
+Acad::ErrorStatus AsdkPie::subMoveGripPointsAt (
 	const AcDbVoidPtrArray &gripAppData, const AcGeVector3d &offset,
 	const int bitflags
 ) {
@@ -340,7 +340,7 @@ Acad::ErrorStatus AsdkPie::moveGripPointsAt (
 	//----- If you return eNotImplemented here, that will force AutoCAD to call
 	//----- the older getGripPoints() implementation. The call below may return
 	//----- eNotImplemented depending of your base class.
-	return (AcDbCircle::moveGripPointsAt (gripAppData, offset, bitflags)) ;
+	return (AcDbCircle::subMoveGripPointsAt (gripAppData, offset, bitflags)) ;
 }
 
 //- Data access
@@ -351,7 +351,7 @@ AsdkPieSector *AsdkPie::AppendData (double value, AsdkPieSector::AsdkPieSectorNu
 	pSector->put_NumberType (numberType) ;
 	pSector->put_Exploded (bExploded) ;
 	pSector->put_Visible (bVisible) ;
-	pSector->put_Color (AcCmEntityColor::kNone) ;
+	pSector->put_Color (AcCmEntityColor::None()) ;
 	mpSectors.append (pSector) ;
 	return (pSector) ;
 }
