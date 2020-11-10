@@ -8,11 +8,13 @@
 - msbuild /t:Build /p:Configuration=Debug2021;Platform=x64
 ```
 ## Expected Build Output
-```
+```bash
 Refer ./build.log
 ```
 
 
+
+Maintained by Madhukar Moogala,  Developer Advocate and Support (DAS)
 
 Presentation and Sample from AU on The AutoCAD Property Palette
 
