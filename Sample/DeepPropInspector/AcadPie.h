@@ -28,6 +28,7 @@
 #include "resource.h"
 #include "DeepPropInspector.h"
 #include "IAcadCircleImpl.h"
+#include <tchar.h>
 
 //-----------------------------------------------------------------------------
 class ATL_NO_VTABLE CAcadPie : 
@@ -63,10 +64,14 @@ public:
 
 	//- IOPMPropertyExtension
 	BEGIN_OPMPROP_MAP()
-		OPMPROP_ENTRY(0, 100, 1, IDS_CATEGORY_PIE, 0, 0, "", 0, 1, IID_NULL, IID_NULL, "") //- Title
-		OPMPROP_ENTRY(0, 101, 1, IDS_CATEGORY_PIE, 0, 0, "", 0, 1, IID_NULL, IID_NULL, "") //- AllExploded
-		OPMPROP_ENTRY(0, 102, 1, IDS_CATEGORY_PIE, 0, 0, "", 0, 1, IID_NULL, IID_NULL, "") //- Clockwise
-		OPMPROP_ENTRY(0, 103, 1, IDS_CATEGORY_PIE, 0, 0, "", 0, 1, IID_NULL, IID_NULL, "") //- Sectors
+		//OPMPROP_ENTRY(0, 100, 1, IDS_CATEGORY_PIE, 0, 0, "", 0, 1, IID_NULL, IID_NULL, "") //- Title
+		//OPMPROP_ENTRY(0, 101, 1, IDS_CATEGORY_PIE, 0, 0, "", 0, 1, IID_NULL, IID_NULL, "") //- AllExploded
+		//OPMPROP_ENTRY(0, 102, 1, IDS_CATEGORY_PIE, 0, 0, "", 0, 1, IID_NULL, IID_NULL, "") //- Clockwise
+		//OPMPROP_ENTRY(0, 103, 1, IDS_CATEGORY_PIE, 0, 0, "", 0, 1, IID_NULL, IID_NULL, "") //- Sectors
+		OPMPROP_CAT_ENTRY(0, 100, 1, IDS_CATEGORY_PIE)//- Title
+		OPMPROP_CAT_ENTRY(0, 101, 1, IDS_CATEGORY_PIE)//- AllExploded
+		OPMPROP_CAT_ENTRY(0, 102, 1, IDS_CATEGORY_PIE)//- Clockwise
+		OPMPROP_CAT_ENTRY(0, 103, 1, IDS_CATEGORY_PIE)//- Sectors
 	END_OPMPROP_MAP()
 
 	//- IAcPiCategorizeProperties

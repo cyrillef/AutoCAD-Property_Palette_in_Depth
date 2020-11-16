@@ -1,0 +1,8 @@
+// Hint files help the Visual Studio IDE interpret Visual C++ identifiers
+// such as names of functions and macros.
+// For more information see https://go.microsoft.com/fwlink/?linkid=865984
+#define BEGIN_OPMPROP_MAP() static ACAD_OPMPROPMAP_ENTRY* GetOPMPropertyMap() { static ACAD_OPMPROPMAP_ENTRY pPropMap[] = {
+// Hint files help the Visual Studio IDE interpret Visual C++ identifiers
+// such as names of functions and macros.
+// For more information see https://go.microsoft.com/fwlink/?linkid=865984
+#define BEGIN_OPMPROP_MAP() static ACAD_OPMPROPMAP_ENTRY* GetOPMPropertyMap() { static ACAD_OPMPROPMAP_ENTRY pPropMap[] = {

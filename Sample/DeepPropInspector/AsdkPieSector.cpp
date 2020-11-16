@@ -66,7 +66,7 @@ Acad::ErrorStatus AsdkPieSector::dwgOutFields (AcDbDwgFiler *pFiler) const {
 	//----- Object version number needs to be saved first
 	eOkReturn( pFiler->writeUInt32 (AsdkPieSector::kCurrentVersionNumber) ) ;
 
-	pFiler->writeString ((LPCTSTR)mTitle) ;
+	pFiler->writeString ((LPCWSTR)mTitle) ;
 	pFiler->writeHardPointerId (mTitleTextStyleId) ;
 	pFiler->writeDouble (mTitleTextSize) ;
 	pFiler->writePoint2d (mTitlePosition) ;
@@ -75,10 +75,10 @@ Acad::ErrorStatus AsdkPieSector::dwgOutFields (AcDbDwgFiler *pFiler) const {
 	pFiler->writeBool (mbExploded) ;
 	pFiler->writeBool (mbVisible) ;
 	pFiler->writeInt32 (mPatternType) ;
-	pFiler->writeString ((LPCTSTR)mPatternName) ;
+	pFiler->writeString ((LPCWSTR)mPatternName) ;
 	pFiler->writeDouble (mScale) ;
 	pFiler->writeDouble (mAngle) ;
-	pFiler->writeUInt32 (mColor.color ()) ;
+	pFiler->writeUInt32 (mColor.getRGBM()) ;
 
 	return (pFiler->filerStatus ()) ;
 }
@@ -95,7 +95,7 @@ Acad::ErrorStatus AsdkPieSector::dwgInFields (AcDbDwgFiler *pFiler) {
 	//if ( version < AsdkMyArc::kCurrentVersionNumber )
 	//	return (Acad::eMakeMeProxy) ;
 
-	char *pSt =NULL ; pFiler->readString (&pSt) ; mTitle =pSt ; delete [] pSt ; //acdbFree (pSt) ;
+	ACHAR *pSt =NULL ; pFiler->readString (&pSt) ; mTitle =pSt ; delete [] pSt ; //acdbFree (pSt) ;
 	pFiler->readHardPointerId (&mTitleTextStyleId) ;
 	pFiler->readDouble (&mTitleTextSize) ;
 	pFiler->readPoint2d (&mTitlePosition) ;
@@ -107,7 +107,7 @@ Acad::ErrorStatus AsdkPieSector::dwgInFields (AcDbDwgFiler *pFiler) {
 	pSt =NULL ; pFiler->readString (&pSt) ; mPatternName =pSt ; delete [] pSt ; //acdbFree (pSt) ;
 	pFiler->readDouble (&mScale) ;
 	pFiler->readDouble (&mAngle) ;
-	Adesk::UInt32 color ; pFiler->readUInt32 (&color) ; mColor.setColor (color) ;
+	Adesk::UInt32 color ; pFiler->readUInt32 (&color) ; mColor.setRGBM (color) ;
 
 	return (pFiler->filerStatus ()) ;
 }
@@ -186,9 +186,9 @@ void AsdkPieSector::drawSectorHatch (AcGiWorldDraw *mode, AcGePoint2dArray &sect
 	hatch.setHatchStyle (AcDbHatch::kNormal) ;
 	AcCmColor cm ;
 	if ( mColor.colorMethod () != AcCmEntityColor::kNone )
-		cm.setColor (mColor.trueColor ()) ;
+		cm.setRGBM (mColor.makeTrueColor().getRGBM()) ;
 	else
-		cm.setColor (mode->subEntityTraits ().trueColor ().trueColor ()) ;
+		cm.setRGBM(mode->subEntityTraits ().trueColor ().makeTrueColor().getRGBM()) ;
 	hatch.setColor (cm, true) ;
 	hatch.evaluateHatch (false) ;
 	hatch.worldDraw (mode) ;

@@ -1,30 +1,60 @@
-Microsoft Visual Studio Solution File, Format Version 8.00
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DeepPropInspector", "DeepPropInspector\DeepPropInspector.vcproj", "{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DeepPropInspector", "DeepPropInspector\DeepPropInspector.vcxproj", "{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DeepPropInspectorUI", "DeepPropInspectorUI\DeepPropInspectorUI.vcproj", "{4B36304D-F0EC-4DC3-B62F-2C1BCCA50EBD}"
-	ProjectSection(ProjectDependencies) = postProject
-		{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0} = {7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DeepPropInspectorUI", "DeepPropInspectorUI\DeepPropInspectorUI.vcxproj", "{4B36304D-F0EC-4DC3-B62F-2C1BCCA50EBD}"
 EndProject
 Global
-	GlobalSection(SolutionConfiguration) = preSolution
-		Debug = Debug
-		Release = Release
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Debug2020|Win32 = Debug2020|Win32
+		Debug2020|x64 = Debug2020|x64
+		Debug2021|Win32 = Debug2021|Win32
+		Debug2021|x64 = Debug2021|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
 	EndGlobalSection
-	GlobalSection(ProjectConfiguration) = postSolution
-		{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}.Debug.ActiveCfg = Debug|Win32
-		{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}.Debug.Build.0 = Debug|Win32
-		{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}.Release.ActiveCfg = Release|Win32
-		{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}.Release.Build.0 = Release|Win32
-		{4B36304D-F0EC-4DC3-B62F-2C1BCCA50EBD}.Debug.ActiveCfg = Debug|Win32
-		{4B36304D-F0EC-4DC3-B62F-2C1BCCA50EBD}.Debug.Build.0 = Debug|Win32
-		{4B36304D-F0EC-4DC3-B62F-2C1BCCA50EBD}.Release.ActiveCfg = Release|Win32
-		{4B36304D-F0EC-4DC3-B62F-2C1BCCA50EBD}.Release.Build.0 = Release|Win32
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}.Debug|Win32.Build.0 = Debug|Win32
+		{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}.Debug|x64.ActiveCfg = Debug|x64
+		{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}.Debug|x64.Build.0 = Debug|x64
+		{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}.Debug2020|Win32.ActiveCfg = Debug2020|Win32
+		{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}.Debug2020|Win32.Build.0 = Debug2020|Win32
+		{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}.Debug2020|x64.ActiveCfg = Debug2021|x64
+		{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}.Debug2020|x64.Build.0 = Debug2021|x64
+		{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}.Debug2021|Win32.ActiveCfg = Debug2021|Win32
+		{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}.Debug2021|Win32.Build.0 = Debug2021|Win32
+		{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}.Debug2021|x64.ActiveCfg = Debug2021|x64
+		{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}.Debug2021|x64.Build.0 = Debug2021|x64
+		{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}.Release|Win32.ActiveCfg = Release|Win32
+		{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}.Release|Win32.Build.0 = Release|Win32
+		{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}.Release|x64.ActiveCfg = Release|x64
+		{7EBD30DB-E5A4-49F2-BE90-CFC8BA1BB1C0}.Release|x64.Build.0 = Release|x64
+		{4B36304D-F0EC-4DC3-B62F-2C1BCCA50EBD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4B36304D-F0EC-4DC3-B62F-2C1BCCA50EBD}.Debug|Win32.Build.0 = Debug|Win32
+		{4B36304D-F0EC-4DC3-B62F-2C1BCCA50EBD}.Debug|x64.ActiveCfg = Debug|x64
+		{4B36304D-F0EC-4DC3-B62F-2C1BCCA50EBD}.Debug|x64.Build.0 = Debug|x64
+		{4B36304D-F0EC-4DC3-B62F-2C1BCCA50EBD}.Debug2020|Win32.ActiveCfg = Debug2020|Win32
+		{4B36304D-F0EC-4DC3-B62F-2C1BCCA50EBD}.Debug2020|Win32.Build.0 = Debug2020|Win32
+		{4B36304D-F0EC-4DC3-B62F-2C1BCCA50EBD}.Debug2020|x64.ActiveCfg = Debug2021|x64
+		{4B36304D-F0EC-4DC3-B62F-2C1BCCA50EBD}.Debug2020|x64.Build.0 = Debug2021|x64
+		{4B36304D-F0EC-4DC3-B62F-2C1BCCA50EBD}.Debug2021|Win32.ActiveCfg = Debug2021|Win32
+		{4B36304D-F0EC-4DC3-B62F-2C1BCCA50EBD}.Debug2021|Win32.Build.0 = Debug2021|Win32
+		{4B36304D-F0EC-4DC3-B62F-2C1BCCA50EBD}.Debug2021|x64.ActiveCfg = Debug2021|x64
+		{4B36304D-F0EC-4DC3-B62F-2C1BCCA50EBD}.Debug2021|x64.Build.0 = Debug2021|x64
+		{4B36304D-F0EC-4DC3-B62F-2C1BCCA50EBD}.Release|Win32.ActiveCfg = Release|Win32
+		{4B36304D-F0EC-4DC3-B62F-2C1BCCA50EBD}.Release|Win32.Build.0 = Release|Win32
+		{4B36304D-F0EC-4DC3-B62F-2C1BCCA50EBD}.Release|x64.ActiveCfg = Release|x64
+		{4B36304D-F0EC-4DC3-B62F-2C1BCCA50EBD}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-	EndGlobalSection
-	GlobalSection(ExtensibilityAddIns) = postSolution
+		SolutionGuid = {366DCE0F-6A4A-4546-AA15-EE0D34B25FB4}
 	EndGlobalSection
 EndGlobal

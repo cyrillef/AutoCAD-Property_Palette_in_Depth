@@ -80,7 +80,8 @@ void DrawUtils::buildTextStyle (AcGiTextStyle &txtStyle, AcDbObjectId txtStyleId
 //-----------------------------------------------------------------------------
 /*static*/
 void DrawUtils::exchangeColor (AcCmEntityColor entColor, AcCmColor color) {
-	entColor.setColor (color.color ()) ;
+	
+	entColor.setRGBM (color.getRGBM()) ;
 }
 
 //-----------------------------------------------------------------------------
@@ -93,5 +94,5 @@ void DrawUtils::exchangeColor (AcCmColor color, AcCmEntityColor entColor) {
 	//		case AcCmEntityColor::ColorMethod::
 	//}
 	//color.setRGB (entColor.red (), entColor.green (), entColor.blue ()) ;
-	color.setColor (entColor.color ()) ;
+	color.setRGBM (entColor.getRGBM ()) ;
 }

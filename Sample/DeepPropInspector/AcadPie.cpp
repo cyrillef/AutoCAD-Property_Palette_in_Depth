@@ -56,7 +56,7 @@ STDMETHODIMP CAcadPie::get_Title (BSTR *pVal) {
 	USES_CONVERSION ;
 	CHECKOUTPARAM( pVal ) ;
 	BEGIN_PROP_GETPUT(AsdkPie, AcDb::kForRead) ;
-	*pVal =::SysAllocString (A2W (pEntity->get_Title ())) ;
+	*pVal =::SysAllocString (pEntity->get_Title()) ;
 	END_PROP_GETPUT(IID_IAcadPie) ;
 	return (S_OK) ;
 }
@@ -64,7 +64,7 @@ STDMETHODIMP CAcadPie::get_Title (BSTR *pVal) {
 STDMETHODIMP CAcadPie::put_Title (BSTR newVal) {
 	USES_CONVERSION ;
 	BEGIN_PROP_GETPUT(AsdkPie, AcDb::kForWrite) ;
-	pEntity->put_Title (W2A (newVal)) ;
+	pEntity->put_Title (newVal) ;
 	END_PROP_GETPUT(IID_IAcadPie) ;
 	return (S_OK) ;
 }
